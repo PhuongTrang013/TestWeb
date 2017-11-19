@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{4400D5ED-1EF0-4296-B29F-A71B56A6764E}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PPCRental/Views/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="PPCRental/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="PPCRental/Views/Home/Index.cshtml" Line="202" Column="43" />
+      <File FileName="PPCRental/Views/Shared/_Layout.cshtml" Line="23" Column="51" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.PPCRental PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
