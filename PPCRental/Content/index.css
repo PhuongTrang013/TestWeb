@@ -3,9 +3,14 @@
     opacity: 0;
 }
 
-.parallax-selector, .row-md4-content .col-md-4 {
+.parallax-selector {
     clear: both;
     float: unset;
+}
+
+.row-md4-content .col-md-4 {
+    width: 100%;
+    overflow: hidden;
 }
 
 * {
@@ -114,7 +119,6 @@ img.img-bottom-behind-content {
 
 .col-md-4.md4-img {
     padding: 0;
-    width: unset;
 }
 
 a.button-all-collections, a.button-all-learnmore, a.button-all-sale, a.button-all-testimonials {
@@ -157,27 +161,37 @@ a.button-all-learnmore {
 }
 
 img.img-responsive {
-    overflow: hidden;
+    width: 100%;
+    height: 254px;
     transition: all .5s linear;
-}
-
-.Featured-Sales .row .col-md-4 a:hover img.img-last {
-    visibility: visible;
-    opacity: 1;
 }
 
 .list-img-banner {
     padding: 10px;
     width: 100%;
     top: 0;
+    left: 0;
     background-color: rgba(255,255,255,.45);
     display: block;
     font-size: 12px;
 }
 
-.row-collections, .row-md4-content {
-    display: flex;
+.row-collections {
     overflow: hidden;
+}
+
+.row-md4-content {
+    column-count: 3;
+    column-fill: balance;
+}
+
+.row-md4-content .col-md-4 a:hover img.img-last {
+    opacity: 1;
+    visibility: visible;
+}
+
+.row-md4-content .col-md-4 a:hover {
+    text-decoration: none;
 }
 
 .row.behind-content {
@@ -216,8 +230,6 @@ img.img-responsive {
 .container-fluid {
     overflow: hidden;
     background-color: #f5f1ed;
-    display: flex;
-    flex-wrap: wrap;
 }
 
     .container-fluid.text-right.lentop {
@@ -298,7 +310,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top.hiendam .container-fluid .navbar-head
     font-family: montserrat_light,sans-serif;
 }
 
-li:last-child {
+ul.nav.navbar-nav.navbar-right li:last-child {
     background-color: #fff;
     border-radius: 25px;
 }
@@ -440,8 +452,7 @@ h1.is-section {
 .content-project {
     display: flex;
     justify-content: space-between;
-    justify-self: center;
-    margin: 20px 0 30px;
+    padding: 20px 0 30px;
 }
 
 .outside-img {

@@ -1,0 +1,89 @@
+﻿    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PPCRental</title>
+        <link href="~/Images/home.png" rel=icon>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+        <link rel="stylesheet" href="~/Content/index.css">
+        <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid fluid-menu">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>                        
+                        </button>
+                        <p class="navbar-Logo">PPCRENTAL</p>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">TRANG CHỦ</a></li>
+                            <li><a href="/ViewListOfProjectUser/ViewListOfProjectUser">Dự Án</a></li>
+                            <li><a href="#">Giới Thiệu</a></li>
+                            <li><a href="#">Liên Hệ</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Đăng nhập</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    	@RenderBody()
+    	<footer class="footer">
+            <div class="container">
+                <div class="col-md-6">
+                    <ul class="footer-info">
+                        <li class="footer-info-item">020 3795 5920</li>
+                        <li class="footer-info-item">
+                            <a href="mailto:info@teamcuriosity.com">info@teamcuriosity.com</a>
+                        </li>
+                        <li class="footer-nav-social">
+                            <a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="footer-nav-social">
+                            <a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="footer-nav-social">
+                            <a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="footer-nav-social">
+                            <a href="#" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <nav>
+                        <ul class="footer-nav">
+                            <li class="footer-nav-item">
+                                <a href="#">Liên Hệ Công Ty</a>
+                            </li>
+                            <li class="footer-nav-item is-mt-hidden">
+                                <a href="#">Giới Thiệu Công Ty</a>
+                            </li>
+                            <li class="footer-nav-item is-mt-hidden">
+                                <a href="#">Hỗ Trợ Khách Hàng</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="container-fluid text-right lentop" title="Lên Đầu Trang">
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+            </div>
+        </footer>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/ppc.js"></script
+    </body>
+    </html>

@@ -1,0 +1,166 @@
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: thin solid;
+}
+
+body {
+    font-family: 'Gill Sans W01',Arial,sans-serif;
+}
+
+i.fa.fa-angle-right,i.fa.fa-angle-left {
+    font-size: 24px;
+}
+
+ul.menu3-left {
+    position: absolute;
+    width: 42px;
+    height: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    box-shadow: 0px 0px 10px;
+    border: thin solid;
+    display: flex;
+    flex-direction: column;
+}
+
+ul.menu3-left li {list-style: none;width: auto;height: 8.3333%;line-height: 50px;}
+
+ul.menu3-left li:nth-child(4) {
+    cursor: zoom-in !important;
+}
+
+ul.menu3-left li:not(.last) {
+    border-bottom: thin solid;
+}
+
+li.ko {
+    flex-grow: 1;
+    cursor: unset !important;
+    background-color: unset !important;
+}
+
+ul.menu3-left li:not(.first):hover {
+    color: #d9534f;
+    border-color: black;
+    background-color: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.container-fluid.content-description {
+    height: 547px;
+    overflow: hidden;
+    position: relative;
+}
+
+.content.img-info {
+    padding: 0 15px;
+}
+
+.content.img-info .col-md-5 {
+    overflow-y: scroll;
+    max-height: -webkit-fill-available;
+}
+
+.row.row-nav-menu2 {
+    border-bottom: thin solid lightgray;
+    border-top: thin solid lightgray;
+}
+
+ul.menu2-1, ul.menu2-2 {
+    margin-bottom: 0;
+}
+
+ul.menu2-1 li, ul.menu2-2 li {
+    font-family: 'Gill Sans W01',Arial,sans-serif;
+    list-style: none;
+    text-transform: uppercase;
+    display: inline-table;
+    width: auto;
+    height: 35px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+ul.menu2-2 li:last-child {
+    border-left: thin solid lightgray;
+    border-right: thin solid lightgray;
+    font-weight: bold;
+}
+
+
+/*//Slider*/
+.mySlides {display:none}
+
+/* Slideshow container */
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+/* Fading animation */
+.fade-in {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+/*@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}*/

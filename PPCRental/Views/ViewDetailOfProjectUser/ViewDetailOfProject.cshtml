@@ -1,0 +1,125 @@
+﻿@model PPCRental.Models.PROPERTY
+@{
+    ViewBag.Title = "ViewDetailOfProject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/styleDetails.css" rel="stylesheet" />
+<div class="main">
+    <!-- container-fluid header start -->
+    <div class="parallax-selector"></div>
+    <div class="parallax-selector"></div>
+    <div class="container-fluid menu2">
+        <div class="row row-nav-menu2">
+            <nav>
+                <div class="container-fluid nav-menu2">
+                    <div class="col-md-7">
+                        <div class="row-inner-menu2">
+                            <ul class="menu2-1">
+                                <li>description</li>
+                                <li data-toggle="modal" data-target="#myModal">map</li>
+                                <li>floorplan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <div class="row">
+                            <ul class="menu2-2">
+                                <li>email us</li>
+                                <li>020 3795 5920</li>
+                                <li>share</li>
+                                <li>request viewing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Maps</h2>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.660420900814!2d-0.15151718443981566!3d51.57445847964624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761a49175c02eb%3A0x395aeb8ce953f074!2sHighpoint+Dental+Clinic!5e0!3m2!1svi!2s!4v1510721376099" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="parallax-selector"></div>
+    <div class="container-fluid content-description">
+        <div class="content img-info">
+            <div class="col-md-7">
+                <img src="~/Images/@Model.Images" alt="" width="100%" />
+            </div>
+            <div class="col-md-5">
+                <div class="content-details">
+                    <h1 class="text-left">Architect: <span style="text-decoration: underline;">@Html.DisplayFor(model => model.PropertyName)</span> </h1>
+                    <div class="row">
+                        <div class="col-md-6 text-left"><h3><strong>Duong @Html.DisplayFor(model => model.Street_ID)<br> Phuong @Html.DisplayFor(model => model.Ward_ID)<br> Quan @Html.DisplayFor(model => model.District_ID), TP.HCM</strong></h3></div>
+                        <div class="col-md-6 text-right">
+                            <h3><strong>Price</strong></h3>
+                            <h3><strong>@Html.DisplayFor(model => model.Price) VNĐ</strong></h3>
+
+                        </div>
+                    </div><strong>
+                        <h3>NEW</h3>
+                        <p class="text-justify" style="letter-spacing: 0.5px; line-height: 1.5;">
+                            @Html.DisplayFor(model => model.Content)
+                        </p>
+                    </strong>
+                </div>
+            </div><strong>
+            </strong>
+        </div><strong>
+
+            <div class="nav-left">
+                <div class="row">
+                    <ul class="menu3-left">
+                        <li class="first">1/23</li>
+                        <li><i class="fa fa-angle-right"></i></li>
+                        <li><i class="fa fa-angle-left"></i></li>
+                        <li><i class="fa fa-search-plus"></i></li>
+                        <li class="ko"></li>
+                        <li><i class="fa fa-facebook"></i></li>
+                        <li><i class="fa fa-twitter"></i></li>
+                        <li><i class="fa fa-pinterest"></i></li>
+                        <li class="last"><i class="fa fa-instagram"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </strong>
+    </div>
+
+    <div class="parallax-selector"></div>
+
+    @*<div class="container-fluid">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Tiện tích</th>
+                        </tr>
+                        <tr>
+                            <th>ID</th>
+                            <td>Loại tiện ích</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>*@
+</div>
+
