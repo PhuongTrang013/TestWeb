@@ -21,3 +21,27 @@
 /Users/wing/Google Drive/PPC-CuriosityTeam/PPCRental.Tests/obj/Debug/PPCRental.Tests.csproj.CoreCompileInputs.cache
 /Users/wing/Google Drive/PPC-CuriosityTeam/PPCRental.Tests/obj/Debug/PPCRental.Tests.dll
 /Users/wing/Google Drive/PPC-CuriosityTeam/PPCRental.Tests/obj/Debug/PPCRental.Tests.pdb
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\PPCRental.Tests.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\PPCRental.Tests.pdb
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\nunit.framework.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\PPCRental.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.Helpers.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.Mvc.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.Razor.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.WebPages.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\PPCRental.pdb
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\nunit.framework.xml
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.Razor.xml
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.Helpers.xml
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.WebPages.xml
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\System.Web.Mvc.xml
+D:\Major\CS\ComputerScience\PPCRental.Tests\obj\Debug\PPCRental.Tests.csprojResolveAssemblyReference.cache
+D:\Major\CS\ComputerScience\PPCRental.Tests\obj\Debug\PPCRental.Tests.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\obj\Debug\PPCRental.Tests.pdb
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\EntityFramework.dll
+D:\Major\CS\ComputerScience\PPCRental.Tests\bin\Debug\EntityFramework.xml

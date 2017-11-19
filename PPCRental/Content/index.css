@@ -216,6 +216,8 @@ img.img-responsive {
 .container-fluid {
     overflow: hidden;
     background-color: #f5f1ed;
+    display: flex;
+    flex-wrap: wrap;
 }
 
     .container-fluid.text-right.lentop {

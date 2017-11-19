@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,6 +9,17 @@
     <RootNamespace>PPCRental</RootNamespace>
     <AssemblyName>PPCRental</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,7 +37,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -60,20 +79,78 @@
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\" />
-    <Folder Include="Models\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ViewListOfProjectUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Models\DISTRICT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FEATURE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROJECT_STATUS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROPERTY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROPERTY_FEATURE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROPERTY_TYPE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STREET.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WARD.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\pic01.jpg" />
+    <Content Include="Images\pic02.jpg" />
+    <Content Include="Images\pic03.jpg" />
+    <Content Include="Images\pic04.jpg" />
+    <Content Include="Images\pic05.jpg" />
+    <Content Include="Images\pic06.jpg" />
+    <Content Include="Images\pic07.jpg" />
+    <Content Include="Images\pic08.jpg" />
+    <Content Include="Images\pic09.jpg" />
+    <Content Include="Images\pic10.jpg" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -127,12 +204,23 @@
     <Content Include="Images\home.png" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Content\bootstrap.min.css.map" />
     <None Include="Content\bootstrap.css.map" />
     <None Include="Content\bootstrap-theme.min.css.map" />
     <None Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Views\ViewListOfProjectUser\ViewListOfProjectUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -141,5 +229,22 @@
         <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
+    <VisualStudio>
+      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51604/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" />
 </Project>
