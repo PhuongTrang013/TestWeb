@@ -1,0 +1,105 @@
+﻿@model IEnumerable<PPCRental.Models.PROPERTY>
+@using PPCRental.Models;
+@{
+    ViewBag.Title = "IndexDuAn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    K21T1_Team3Entities db = new K21T1_Team3Entities();
+    List<PROPERTY_TYPE> prop = new List<PROPERTY_TYPE>();
+    prop = db.PROPERTY_TYPE.ToList();
+}
+<div class="parallax-selector"></div>
+<ul class="nav nav-tabs">
+    @foreach (var item in prop)
+    {
+        <li><a href="@Url.Action("ViewListOfProjectUser","ViewListOfProject",new { typeid = @item.ID})">@item.CodeType</a></li>
+    }
+
+</ul>
+
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <div class="container-fluid duan">
+            @{foreach (var item in Model)
+                {
+                    <div class="col-sm-6 col-md-4">
+                        <a href="/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID">
+                            <div class="thumbnail">
+                                <img src="~/Images/@item.Images" />
+                                <div class="caption">
+                                    <h3>@item.PropertyName</h3>
+                                    <p>@item.Price @item.UnitPrice</p>
+                                    <p>@item.Street_ID Đường, @item.Ward_ID Phường, @item.District_ID Quận</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <div id="menu1" class="tab-pane fade">
+        <div class="container-fluid duan">
+            @{foreach (var item in Model)
+                {
+                    <div class="col-sm-6 col-md-4">
+                        <a href="/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID">
+                            <div class="thumbnail">
+                                <img src="~/Images/@item.Images" />
+                                <div class="caption">
+                                    <h3>@item.PropertyName</h3>
+                                    <p>@item.Price @item.UnitPrice</p>
+                                    <p>@item.Street_ID Đường, @item.Ward_ID Phường, @item.District_ID Quận</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <div id="menu2" class="tab-pane fade">
+        <div class="container-fluid duan">
+            @{foreach (var item in Model)
+                {
+                    <div class="col-sm-6 col-md-4">
+                        <a href="/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID">
+                            <div class="thumbnail">
+                                <img src="~/Images/@item.Images" />
+                                <div class="caption">
+                                    <h3>@item.PropertyName</h3>
+                                    <p>@item.Price @item.UnitPrice</p>
+                                    <p>@item.Street_ID Đường, @item.Ward_ID Phường, @item.District_ID Quận</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <div id="menu3" class="tab-pane fade">
+        <div class="container-fluid duan">
+            @{foreach (var item in Model)
+                {
+                    <div class="col-sm-6 col-md-4">
+                        <a href="/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID">
+                            <div class="thumbnail">
+                                <img src="~/Images/@item.Images" />
+                                <div class="caption">
+                                    <h3>@item.PropertyName</h3>
+                                    <p>@item.Price @item.UnitPrice</p>
+                                    <p>@item.Street_ID Đường, @item.Ward_ID Phường, @item.District_ID Quận</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+

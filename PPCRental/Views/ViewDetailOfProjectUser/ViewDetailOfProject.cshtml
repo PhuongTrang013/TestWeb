@@ -4,122 +4,240 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link href="~/Content/styleDetails.css" rel="stylesheet" />
-<div class="main">
-    <!-- container-fluid header start -->
-    <div class="parallax-selector"></div>
-    <div class="parallax-selector"></div>
-    <div class="container-fluid menu2">
-        <div class="row row-nav-menu2">
-            <nav>
-                <div class="container-fluid nav-menu2">
-                    <div class="col-md-7">
-                        <div class="row-inner-menu2">
-                            <ul class="menu2-1">
-                                <li>description</li>
-                                <li data-toggle="modal" data-target="#myModal">map</li>
-                                <li>floorplan</li>
-                            </ul>
+<link href="~/Content/details.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="content-img" style="background: url(/Images/@Model.Images) center no-repeat #f5f1ed; background-size: cover;height: 600px ;position: relative;">
+
+            <div class="button-view-detailsIMG">
+                <!-- button -->
+                <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#viewphoto">View Photos</button>
+                <!-- Modal -->
+                <div class="modal fade" id="viewphoto" role="dialog">
+                    <div class="modal-dialog modal-lg">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                <h1 class="modal-title">Modal Header</h1>
+                            </div>
+                            <div class="modal-body">
+
+                                <!-- start -->
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        @{ 
+                                            var count = 0;
+                                        }
+                                        @for (int i = 0; i < 10; i++)
+                                        {
+                                            <div class="item @(count++ > 0 ? null : "active")">
+                                                <img src="~/Images/@Model.Images" alt="Los Angeles" style="width:100%;">
+                                            </div>
+                                        }
+
+                                        @*<div class="item">
+                                            <img src="~/Images/@Html.DisplayFor(model=>model.Images)" alt="Chicago" style="width:100%;">
+                                        </div>*@
+
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+
+                                <!-- end -->
+                            </div>
+                            <!-- 					        <div class="modal-footer">
+                                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div> -->
                         </div>
-                    </div>
-                    <div class="col-md-5 text-center">
-                        <div class="row">
-                            <ul class="menu2-2">
-                                <li>email us</li>
-                                <li>020 3795 5920</li>
-                                <li>share</li>
-                                <li>request viewing</li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
-            </nav>
+            </div>
+            <!-- Trigger the modal with a button -->
+
         </div>
     </div>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Maps</h2>
-                </div>
-                <div class="modal-body">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.660420900814!2d-0.15151718443981566!3d51.57445847964624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761a49175c02eb%3A0x395aeb8ce953f074!2sHighpoint+Dental+Clinic!5e0!3m2!1svi!2s!4v1510721376099" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="parallax-selector"></div>
-    <div class="container-fluid content-description">
-        <div class="content img-info">
-            <div class="col-md-7">
-                <img src="~/Images/@Model.Images" alt="" width="100%" />
-            </div>
-            <div class="col-md-5">
-                <div class="content-details">
-                    <h1 class="text-left">Architect: <span style="text-decoration: underline;">@Html.DisplayFor(model => model.PropertyName)</span> </h1>
-                    <div class="row">
-                        <div class="col-md-6 text-left"><h3><strong>Duong @Html.DisplayFor(model => model.Street_ID)<br> Phuong @Html.DisplayFor(model => model.Ward_ID)<br> Quan @Html.DisplayFor(model => model.District_ID), TP.HCM</strong></h3></div>
-                        <div class="col-md-6 text-right">
-                            <h3><strong>Price</strong></h3>
-                            <h3><strong>@Html.DisplayFor(model => model.Price) VNĐ</strong></h3>
-
-                        </div>
-                    </div><strong>
-                        <h3>NEW</h3>
-                        <p class="text-justify" style="letter-spacing: 0.5px; line-height: 1.5;">
-                            @Html.DisplayFor(model => model.Content)
-                        </p>
-                    </strong>
-                </div>
-            </div><strong>
-            </strong>
-        </div><strong>
-
-            <div class="nav-left">
-                <div class="row">
-                    <ul class="menu3-left">
-                        <li class="first">1/23</li>
-                        <li><i class="fa fa-angle-right"></i></li>
-                        <li><i class="fa fa-angle-left"></i></li>
-                        <li><i class="fa fa-search-plus"></i></li>
-                        <li class="ko"></li>
-                        <li><i class="fa fa-facebook"></i></li>
-                        <li><i class="fa fa-twitter"></i></li>
-                        <li><i class="fa fa-pinterest"></i></li>
-                        <li class="last"><i class="fa fa-instagram"></i></li>
-                    </ul>
-                </div>
-            </div>
-        </strong>
-    </div>
-
-    <div class="parallax-selector"></div>
-
-    @*<div class="container-fluid">
-            <div class="col-md-12">
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <th>#</th>
-                            <th>Tiện tích</th>
-                        </tr>
-                        <tr>
-                            <th>ID</th>
-                            <td>Loại tiện ích</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>*@
 </div>
+<div class="container" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="row">
+        <div class="col-md-8">
+            <nav class="navbar navbar-sticky">
+                <!-- <div class="container-fluid"> -->
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="actived"><a href="#section1">Overview</a></li>
+                                <li><a href="#section2">Location</a></li>
+                            </ul>
+                        </div>
+            </nav>
+
+            <section id="section1" class="container-fluid">
+                <!-- Right-aligned media object -->
+                <div class="media">
+                    <div class="media-body">
+                        <h1 class="media-heading">Right-aligned</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                        <h4><strong>The space</strong></h4>
+                        <p style="letter-spacing: 1px;">
+                           @Html.DisplayFor(model => model.Content)
+                        </p>
+
+                        <!-- button -->
+                        <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal">Contact&nbsp;host</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Modal Header</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the modal.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="media-right text-center">
+                        <img src="@Html.DisplayFor(model => model.Avatar)" alt="@Html.DisplayFor(model => model.Avatar)" class="media-object img-circle" style="width:64px; height: 64px">Author
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-md-4 right-content-md4" style="margin-top: 20px;">
+            <div class="col-md-12" style="border: thin solid;">
+                <div class="content-book">
+                    <h2 class="col-md-4">Price:</h2>
+                    <h2 class="col-md-8">@Html.DisplayFor(model => model.Price) @Html.DisplayFor(model => model.UnitPrice)</h2>
+                    <hr>
+                    <h4><strong>House Infomation</strong></h4>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <ul class="list-inline">
+                                <li><i class="fa fa-bed" aria-hidden="true"></i> @Html.DisplayFor(model => model.BedRoom)</li>
+                                <li><i class="fa fa-bath" aria-hidden="true"></i> @Html.DisplayFor(model => model.BathRoom)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <h4><strong>Amenities</strong></h4>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <ul class="Amenities-tienich">
+                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    @*<h4><strong>Price</strong></h4>
+                    <p>Cleaning Fee ₫2342459</p>
+                    <h5><strong>Always communicate through Airbnb</strong></h5>
+                    <p>To protect your payment, never transfer money or communicate outside of the Airbnb website or app.</p>
+                    <hr>*@
+                    <h4><strong>Safety features</strong></h4>
+                    <div class="safety">
+                        <ul class="safety-ul">
+                            <li>Smoke detector</li>
+                            <li>Fire extinguisher</li>
+                            <li>First aid kit</li>
+                        </ul>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-selector"></div>
+
+    <section id="section2" class="container-fluid">
+        <h3>Location</h3>
+        <p class="lead">Petur Haukur’s home is located in Akureyri, Northeast, Iceland.</p>
+        <div id="googlemaps"></div>
+        <script type="text/javascript">
+		      function GoogleMaps() {
+		        var vitri = {lat: 10.802006, lng: 106.592242};
+		        var map = new google.maps.Map(document.getElementById('googlemaps'), {
+		          zoom: 12,
+		          center: vitri
+		        });
+		        var marker = new google.maps.Marker({
+		          position: vitri,
+		          map: map
+		        });
+		      }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtTijdOrawSLXkwdTOT1MKXE7Y0-pVcFI&callback=GoogleMaps">
+        </script>
+    </section>
+</div>
+
+<div class="parallax-selector"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

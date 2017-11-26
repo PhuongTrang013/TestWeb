@@ -5,8 +5,8 @@
         <title>PPCRental</title>
         <link href="~/Images/home.png" rel=icon>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
         <link rel="stylesheet" href="~/Content/index.css">
         <!-- <link rel="stylesheet" href="css/responsive.css"> -->
@@ -25,11 +25,11 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">TRANG CHỦ</a></li>
-                            <li><a href="/ViewListOfProjectUser/ViewListOfProjectUser">Dự Án</a></li>
+                            <li><a href="/Home/Index">TRANG CHỦ</a></li>
+                            <li><a href="/ViewListOfProject/ViewListOfProjectUser">Dự Án</a></li>
                             <li><a href="#">Giới Thiệu</a></li>
                             <li><a href="#">Liên Hệ</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Đăng nhập</a></li>
+                            <li><a href="~/Agency/PropertyAgency/IndexAgency"><span class="glyphicon glyphicon-user"></span> Đăng nhập</a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,10 +80,24 @@
                 <i class="fa fa-angle-up" aria-hidden="true"></i>
             </div>
         </footer>
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="~/Scripts/ppc.js"></script
+
+        <script src="~/Scripts/jquery-3.2.1.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/ppc.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+        <script>
+            $('#Quan_ID').select2();
+            $('#Phuong_ID').select2();
+            $('#Street_ID').select2();
+            $('#Quan_ID').on('change', function () {
+                $('#Phuong_ID').empty();
+                $.getJSON('GetStreet?District_id=' + $('#Quan_ID').val(),
+                    function (json) {
+                        $('#Phuong_ID').select2({ data: json });
+                    });
+            });
+        </script>
     </body>
     </html>

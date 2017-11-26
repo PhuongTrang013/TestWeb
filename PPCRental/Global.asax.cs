@@ -11,5 +11,6 @@ namespace PPCRental
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+        
     }
 }

@@ -211,9 +211,8 @@ img.img-responsive {
         text-align: right;
     }
 
-.row.row-combobox {
+.row.row-combobox .col-md-4 {
     margin-top: 15px;
-    margin-bottom: 15px;
 }
 
 .row.fullwidth_bg.row-combobox.row-combobox-bg {

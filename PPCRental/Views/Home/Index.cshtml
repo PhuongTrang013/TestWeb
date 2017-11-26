@@ -1,4 +1,15 @@
-﻿<div class="main">
+﻿@model IEnumerable<PPCRental.Models.PROPERTY>
+@using PPCRental.Models;
+@{
+    K21T1_Team3Entities db = new K21T1_Team3Entities();
+    List<PROPERTY_TYPE>
+        prop = new List<PROPERTY_TYPE>
+            ();
+    prop = db.PROPERTY_TYPE.ToList();
+}
+
+
+<div class="main">
     <div class="container-fluid homeheader_bg parallax-window-home">
         <div class="container content-header">
             <div class="row fullwidth_bg">
@@ -8,103 +19,52 @@
             </div>
             <div class="row fullwidth_bg row-combobox row-combobox-bg">
                 <div class="container">
-                    <form action="" method="post">
+                    <form action="@Url.Action("Filter","Home")" role="search" method="post">
                         <div class="row row-combobox">
                             <div class="col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <select class="form-control">
-                                        <option>Quận/Huyện</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                    </select>
+                                    <span class="input-group-addon"><i class="fa fa-university" aria-hidden="true"></i></span>
+                                    @Html.DropDownList("Quan_ID", new SelectList(db.DISTRICTs, "ID", "DistrictName"), "Chọn Quận...", new { @class = "form-control" })
+                                </div>
+                            </div>
+                            @*<div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
+                                    @Html.DropDownList("Phuong_ID", new SelectList(db.WARDs, "ID", "WardName"), "Chọn Phường...", new { @class = "form-control" })
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <select class="form-control">
-                                        <option>Phường/Xã</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                    </select>
+                                    <span class="input-group-addon"><i class="fa fa-area-chart" aria-hidden="true"></i></span>
+                                    <input id="search" type="text" class="form-control" placeholder="Diện tích">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <select class="form-control">
-                                        <option>Đường</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-combobox">
-                            <div class="col-md-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <select class="form-control">
-                                        <option>Diện tích</option>
-                                    </select>
+                                    <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+                                    <input id="search" type="text" class="form-control" placeholder="Giá">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <select class="form-control">
-                                        <option>Giá</option>
-                                        <option>Dưới 1.000.000.000</option>
-                                        <option>Từ 1.000.000.000 đến 2.000.000.00</option>
-                                        <option>Từ 2.000.000.000 đến 3.000.000.000</option>
-                                        <option>Từ 3.000.000.000 đến 4.000.000.000</option>
-                                        <option>Trên 4.000.000.000</option>
-                                    </select>
+                                    <span class="input-group-addon"><i class="fa fa-bed" aria-hidden="true"></i></span>
+                                    <input id="search" type="text" class="form-control" placeholder="Số phòng ngủ">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <select class="form-control">
-                                        <option>Phòng ngủ</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <span class="input-group-addon"><i class="fa fa-bath" aria-hidden="true"></i></span>
+                                    <input id="search" type="text" class="form-control" placeholder="Số phòng tắm">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row row-combobox">
                             <div class="col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <select class="form-control">
-                                        <option>Phòng tắm</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                    <input id="search" type="text" class="form-control" name="propertyname" placeholder="Tên dự án">
                                 </div>
-                            </div>
-                            <div class="col-md-8">
-                                <button type="button" class="btn btn-danger">Tìm Kiếm</button>
+                            </div>*@
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-danger">Tìm Kiếm</button>
                             </div>
                         </div>
                     </form>
@@ -133,21 +93,21 @@
                 <div class="section-header text-center">
                     <h1 class="heading is-section">Danh sách dự án</h1>
                 </div>
-                @*<div class="container Featured-Sales">*@
+                @*<div class="container Featured-Sales">
+                *@
                 <div class="row-md4-content">
                     @{ int count = 0; }
                     @{ foreach (var item in Model)
                         {
                             <div class="col-md-4">
                                 <a href='/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID'>
-                                    <div class="row outside-img">
-                                        <img class="img-responsive" src="~/Images/@item.Images" alt="">
-                                        <img class="img-responsive img-last" src="~/Images/nha1.2.jpg" alt="">
+                                    <div class="row">
+                                        <img class="img-responsive" src="~/Images/@item.Avatar" alt="">
                                     </div>
                                     <div class="list-img-banner">Mới</div>
                                     <div class="content-project">
-                                        <h3>Căn hộ Phú Mỹ Hưng <br>7 Phú Mỹ Hưng</h3>
-                                        <p>500.000.000 <br>Lê Vân Nguyệt</p>
+                                        <h3>@item.PropertyName<br>@item.DISTRICT.DistrictName</h3>
+                                        <p>@item.Price @item.UnitPrice<br>@item.PROPERTY_TYPE.Description</p>
                                     </div>
                                 </a>
                             </div>
@@ -158,7 +118,7 @@
                             }
                         }
                     }
-                    <a class="button-all-sale" href="">Xem Thêm</a>
+                    <a class="button-all-sale" href="@Url.Action("ViewListOfProjectUser","ViewListOfProject")">Xem Thêm</a>
                 </div>
             </section>
         </div>
@@ -168,16 +128,6 @@
                 <h1 class="heading is-section">Loại Dự Án</h1>
             </div>
             <div class="row row-collections">
-                <a href="">
-                    <div class="col-md-4 md4-img">
-                        <img src="~/Images/big1.jpg" alt="">
-                        <div class="nenmo"></div>
-                        <div class="inner-md4-img">
-                            <div class="chuto">Căn hộ</div>
-                            <div class="chunho"></div>
-                        </div>
-                    </div>
-                </a>
                 <a href="">
                     <div class="col-md-4 md4-img">
                         <img src="~/Images/big4.jpg" alt="">
@@ -193,13 +143,11 @@
                         <img src="~/Images/big3.jpg" alt="">
                         <div class="nenmo"></div>
                         <div class="inner-md4-img">
-                            <div class="chuto">Villa</div>
+                            <div class="chuto">Resort</div>
                             <div class="chunho"></div>
                         </div>
                     </div>
                 </a>
-            </div>
-            <div class="row row-collections">
                 <a href="">
                     <div class="col-md-4 md4-img">
                         <img src="~/Images/big5.jpg" alt="">
@@ -230,9 +178,16 @@
                         </div>
                     </div>
                 </a>
-            </div>
-            <div class="container button-viewcollections">
-                <a class="button-all-collections" href="">Xem thêm</a>
+                <a href="">
+                    <div class="col-md-4 md4-img">
+                        <img src="~/Images/big1.jpg" alt="">
+                        <div class="nenmo"></div>
+                        <div class="inner-md4-img">
+                            <div class="chuto">Biệt thự</div>
+                            <div class="chunho"></div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
     </div>
@@ -284,3 +239,4 @@
     </div>
     <div class="parallax-selector"></div>
 </div>
+

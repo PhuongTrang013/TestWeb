@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,13 +39,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
@@ -80,11 +84,16 @@
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Areas\Agency\Models\" />
+    <Folder Include="Views\ViewList\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Agency\AgencyAreaRegistration.cs" />
+    <Compile Include="Areas\Agency\Controllers\PropertyAgencyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ViewDetailOfProjectUserController.cs" />
-    <Compile Include="Controllers\ViewListOfProjectUserController.cs" />
+    <Compile Include="Controllers\ViewListOfProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -133,7 +142,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\styleDetails.css" />
+    <Content Include="Content\bootstrap1.css" />
+    <Content Include="Content\dataTables.bootstrap4.css" />
+    <Content Include="Content\details.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\sb-admin.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Images\pic01.jpg" />
     <Content Include="Images\pic02.jpg" />
     <Content Include="Images\pic03.jpg" />
@@ -154,6 +168,25 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\dataTables.bootstrap4.js" />
+    <Content Include="Areas\Agency\Views\PropertyAgency\IndexAgency.cshtml" />
+    <Content Include="Areas\Agency\Views\PropertyAgency\Edit.cshtml" />
+    <Content Include="Areas\Agency\Views\PropertyAgency\Create.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.easing.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\sb-admin-datatables.min.js" />
+    <Content Include="Scripts\sb-admin.min.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -205,6 +238,7 @@
     <Content Include="Content\index.css" />
     <Content Include="Scripts\ppc.js" />
     <Content Include="Images\home.png" />
+    <Content Include="Views\Home\Filter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\Model1.edmx">
@@ -214,14 +248,22 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Areas\Agency\Views\web.config" />
+    <Content Include="Areas\Agency\Views\Shared\AgencyLayout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Content\bootstrap.min.css.map" />
     <None Include="Content\bootstrap.css.map" />
     <None Include="Content\bootstrap-theme.min.css.map" />
     <None Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Views\ViewListOfProjectUser\ViewListOfProjectUser.cshtml" />
     <Content Include="Views\ViewDetailOfProjectUser\ViewDetailOfProject.cshtml" />
+    <Content Include="Views\ViewListOfProject\ViewListOfProjectUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
