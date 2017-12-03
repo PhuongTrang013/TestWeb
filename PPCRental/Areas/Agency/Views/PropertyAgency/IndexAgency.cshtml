@@ -1,11 +1,11 @@
-﻿@model IEnumerable<PPCRental.Models.PROPERTY>
+﻿ @model IEnumerable<PPCRental.Models.PROPERTY>
 
 @{
     ViewBag.Title = "IndexAgency";
     Layout = "~/Areas/Agency/Views/Shared/AgencyLayout.cshtml";
 }
 
-<h2>List Of Project</h2>
+<h2>Danh sách dự án</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,71 +13,46 @@
 <div class="card mb-3">
     <div class="card-header">
         <i class="fa fa-table"></i> Data Table Example
-    </div>
+    </div> 
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-                    <tr>
-                        <th>PropertyName</th>
-                        <th>Images</th>
-                        <th>Price</th>
-                        <th>UnitPrice</th>
-                        <th>DistrictName</th>
-                        <th>PROPERTY_TYPE</th>
-                        <th>StreetName</th>
-                        <th>WardName</th>
+                    <tr style="font-size: 15px; font-weight: bold;">
+                        <th>Tên dự án</th>
+                        <th>Ảnh đại diện</th>
+                        <th>Giá bán</th>
+                        <th>Địa chỉ</th>
+                        <th>Loại dự án</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>PropertyName</th>
-                        <th>Images</th>
-                        <th>Price</th>
-                        <th>UnitPrice</th>
-                        <th>DistrictName</th>
-                        <th>PROPERTY_TYPE</th>
-                        <th>StreetName</th>
-                        <th>WardName</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
+               
                 <tbody>
 
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
+                        <tr style="font-size: 16px;">
+                            <td style="font-size: 16px; width: 250px;">
                                 @Html.DisplayFor(modelItem => item.PropertyName)
                             </td>
-                            <td>
-                                @*@Html.DisplayFor(modelItem => item.Images)*@
-                                <img src="~/Images/@item.Images" alt="Alternate Text" width="120px" height="100px" />
+                            <td style="width: 120px;">
+                                <img src="~/Images/@item.Avatar" alt="Alternate Text" width="120px" height="100px" />
 
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Price)
+                                @Html.DisplayFor(modelItem => item.Price) @Html.DisplayFor(modelItem => item.UnitPrice)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.UnitPrice)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DISTRICT.DistrictName)
+                               @Html.DisplayFor(modelItem => item.STREET.StreetName), @Html.DisplayFor(modelItem => item.WARD.WardName), @Html.DisplayFor(modelItem => item.DISTRICT.DistrictName)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.PROPERTY_TYPE.CodeType)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.STREET.StreetName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.WARD.WardName)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                @Html.ActionLink("Sửa", "Edit", new { id = item.ID }) |
+                                @Html.ActionLink("Xem", "Details", new { id = item.ID }) |
+                                @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
                             </td>
                         </tr>
                     }

@@ -1,189 +1,266 @@
-﻿@model PPCRental.Models.PROPERTY
-
-@using (Html.BeginForm()) 
+﻿@using PPCRental.Models;
+@model PPCRental.Models.PROPERTY
+@{
+    K21T1_Team3Entities db = new K21T1_Team3Entities();
+    List<PROPERTY_TYPE> prop = new List<PROPERTY_TYPE>();
+    prop = db.PROPERTY_TYPE.ToList();
+}
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Agency/Views/Shared/AgencyLayout.cshtml";
+    //var nguyen = ViewData["District"];
+}
+@using (Html.BeginForm("Create", "PropertyAgency", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>PROPERTY</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.PropertyName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PropertyName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PropertyName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Images, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Images, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PropertyType_ID, "PropertyType_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ProductType_ID", new SelectList(ViewBag.product_type, "ID", "Name", Model.PROPERTY_TYPE))
-                @Html.ValidationMessageFor(model => model.PropertyType_ID)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Street_ID, "Street_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Street_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Street_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Ward_ID, "Ward_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Ward_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Ward_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.District_ID, "District_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("District_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.District_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.UnitPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BedRoom, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BedRoom, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BedRoom, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BathRoom, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BathRoom, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BathRoom, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PackingPlace, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PackingPlace, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PackingPlace, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserID, "UserID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("UserID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Created_at, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Created_at, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Created_at, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Create_post, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Create_post, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Create_post, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Status_ID, "Status_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Status_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Status_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Note, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Updated_at, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Updated_at, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Updated_at, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sale_ID, "Sale_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Sale_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Sale_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+<div class="container signup-form">
+    <div class="title-table">
+        <h1>Đăng mới dự án bất động sản</h1>
     </div>
+    <div class="content-table">
+        <table class="table">
+            <tr>
+                <td>
+                    <p class="label">Tên dự án</p>
+                </td>
+                <td>
+                    @Html.TextBoxFor(x => x.PropertyName, new { @class = "propname"})
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Ảnh đại diện</p>
+                </td>
+                <td>
+                    <input type="file" name="Avatar" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Ảnh dự án</p>
+                </td>
+                <td>
+                    <input type="file" accept="image/*" name="image">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Loại dự án</p>
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => x.PropertyType_ID, new SelectList(db.PROPERTY_TYPE, "ID", "Description"), "Chọn loại dự án" , new { @class = "post-prototype" })
+                    @*<form>
+                            <select class="input" name="TypeOfProp">
+                                @foreach (var item in db.PROPERTY_TYPE)
+                                {
+                                    <option value="@item.ID">@item.Description</option>
+                                }
+                            </select>
+                        </form>*@
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Quận</p>
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => x.District_ID, new SelectList(db.DISTRICTs, "ID", "DistrictName"), "Chọn Quận" , new { @class = "input-district" })
+                    @*<form>
+                            <select class="input input-district" name="TypeOfProp">
+                                @foreach(var item in nguyen as List<DISTRICT>)
+                                {
+                                    <option value="@item.ID">@item.DistrictName</option>
+                                }
+                                @foreach (var item in db.DISTRICTs)
+                                {
+                                    <option value="@item.ID">@item.DistrictName</option>
+                                }
+                            </select>
+                        </form>*@
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label input-ward">Phường</p>
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => x.Ward_ID, new SelectList(db.WARDs, "ID", "WardName"), "Chọn Phường", new { @class = "input-ward" })
+                    @*<form>
+                            <select class="input" name="ward">
+                                @foreach (var item in db.WARDs)
+                                {
+                                    <option value="@item.ID">@item.WardName</option>
+                                }
+                            </select>
+                        </form>*@
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Đường</p>
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => x.Street_ID, new SelectList(db.STREETs, "ID", "StreetName"), "Chọn Đường", new { @class = "input-street" })
+                    @*<select class="input input-street" name="street">
+                            @foreach (var item in db.STREETs)
+                            {
+                                <option value="@item.ID">@item.StreetName</option>
+                            }
+                        </select>*@
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Giá</p>
+                </td>
+                <td>
+                    <input class="input" type="text" name="price" placeholder="Nhập giá">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Đơn vị tiền tệ</p>
+                </td>
+                <td>
+                    <input class="input" type="text" name="unitprice" placeholder="Đơn vị tiền tệ">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Diện tích</p>
+                </td>
+                <td>
+                    <input class="input" type="text" name="area" placeholder="Nhập diện tích">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Số phòng ngủ</p>
+                </td>
+                <td>
+                    <select class="input" name="bedroom">
+                        <option selected disabled>Số phòng ngủ</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Số phòng tắm</p>
+                </td>
+                <td>
+                    <select class="input" name="bathroom">
+                        <option selected disabled>Số phòng tắm</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Chỗ đậu xe</p>
+                </td>
+                <td>
+                    <select class="input" name="parking">
+                        <option selected disabled>Số chỗ đậu xe</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Tiện ích</p>
+                </td>
+                <td>
+                    <div class="col-md-4 chk-feature" style="padding-left: 0px; padding-right: 0px;">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="1" name="chkfeature">Ban công</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="5" name="chkfeature">Phòng tập gym</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="9" name="chkfeature">Hồ bơi</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="11" name="chkfeature">Bảo vệ</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 chk-feature" style="padding-left: 0px; padding-right: 0px;">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="2" name="chkfeature">Chỗ đậu xe</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="6" name="chkfeature">Nhà bếp</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="10" name="chkfeature">Sàn gỗ</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="8" name="chkfeature">Cho nuôi thú cưng</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 chk-feature" style="padding-left: 0px; padding-right: 0px;">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="3" name="chkfeature">Thang máy</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="7" name="chkfeature">Phòng giặt ủi</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="4" name="chkfeature">Vườn</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            @*<tr>
+                    <td>
+                        <p class="label">Mô tả nhanh dự án</p>
+                    </td>
+                    <td>
+                        <input class="input" type="text" name="des" placeholder="Nhập mô tả nhanh dự án">
+                    </td>
+                </tr>*@
+            <tr>
+                <td>
+                    <p class="label">Mô tả chi tiết dự án</p>
+                </td>
+                <td>
+                    <textarea rows="7" cols="41" name="detail" placeholder="Nhập mô tả chi tiết dự án" style="border-radius: 7px;"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="button-area">
+        <button type="submit" style="background-color: #56bc55">Đăng dự án</button>
+        <button style="background-color: #f6b049">Lưu nháp</button>
+        <button style="background-color: #d5564d"><a href="~/Agency/PropertyAgency/IndexAgency">Hủy</a></button>
+    </div>
+</div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "IndexAgency")
-</div>
+@*@section Scripts {
+    <script>
+        $('.input-district').select2();
+        $('#Duong').select2();
+        $('#Quan').on('change', function () {
+            $('#Duong').empty();
+            $.getJSON('Filter/GetStreet?did=' + $('#Quan').val(), function (json) {
+                $('#Duong').select2({ data: json });
+            });
+
+        });
+    </script>
+}*@

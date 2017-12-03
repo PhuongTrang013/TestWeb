@@ -42,27 +42,190 @@ C:\Users\Nam\Desktop\Cs\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
 C:\Users\Nam\Desktop\Cs\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
 C:\Users\Nam\Desktop\Cs\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
 C:\Users\Nam\Desktop\Cs\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
-D:\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll.config
-D:\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.pdb
-D:\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\Microsoft.Web.Infrastructure.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
-D:\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.xml
-D:\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.xml
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
-D:\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
-D:\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
-D:\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.csproj.CoreCompileInputs.cache
-D:\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
-D:\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
+D:\ComputerScience\PPCRental\bin\PPCRental.dll.config
+D:\ComputerScience\PPCRental\bin\PPCRental.dll
+D:\ComputerScience\PPCRental\bin\PPCRental.pdb
+D:\ComputerScience\PPCRental\bin\EntityFramework.dll
+D:\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
+D:\ComputerScience\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+D:\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
+D:\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
+D:\ComputerScience\PPCRental\bin\System.Web.Razor.dll
+D:\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
+D:\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
+D:\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
+D:\ComputerScience\PPCRental\bin\EntityFramework.xml
+D:\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
+D:\ComputerScience\PPCRental\bin\System.Web.Razor.xml
+D:\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
+D:\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
+D:\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
+D:\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
+D:\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
+D:\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+D:\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
+D:\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll.config
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.pdb
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll.config
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.pdb
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
+C:\Users\Nam\Desktop\DemoPPCRental\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll.config
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.pdb
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.xml
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.xml
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.csproj.CoreCompileInputs.cache
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
+C:\Users\haichau\Downloads\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll.config
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\PPCRental.pdb
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.xml
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Razor.xml
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.csproj.CoreCompileInputs.cache
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
+D:\VLUA\ComputerScience\ComputerScience\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
+D:\VLUA\PPCRental\bin\PPCRental.dll.config
+D:\VLUA\PPCRental\bin\PPCRental.dll
+D:\VLUA\PPCRental\bin\PPCRental.pdb
+D:\VLUA\PPCRental\bin\EntityFramework.dll
+D:\VLUA\PPCRental\bin\EntityFramework.SqlServer.dll
+D:\VLUA\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+D:\VLUA\PPCRental\bin\System.Web.Helpers.dll
+D:\VLUA\PPCRental\bin\System.Web.Mvc.dll
+D:\VLUA\PPCRental\bin\System.Web.Razor.dll
+D:\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.dll
+D:\VLUA\PPCRental\bin\System.Web.WebPages.dll
+D:\VLUA\PPCRental\bin\System.Web.WebPages.Razor.dll
+D:\VLUA\PPCRental\bin\EntityFramework.xml
+D:\VLUA\PPCRental\bin\EntityFramework.SqlServer.xml
+D:\VLUA\PPCRental\bin\System.Web.Razor.xml
+D:\VLUA\PPCRental\bin\System.Web.Helpers.xml
+D:\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.xml
+D:\VLUA\PPCRental\bin\System.Web.WebPages.xml
+D:\VLUA\PPCRental\bin\System.Web.WebPages.Razor.xml
+D:\VLUA\PPCRental\bin\System.Web.Mvc.xml
+D:\VLUA\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+D:\VLUA\PPCRental\obj\Debug\PPCRental.dll
+D:\VLUA\PPCRental\obj\Debug\PPCRental.pdb
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\PPCRental.dll.config
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\PPCRental.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\PPCRental.pdb
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\EntityFramework.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\EntityFramework.SqlServer.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.Helpers.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.Mvc.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.Razor.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Razor.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\EntityFramework.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\EntityFramework.SqlServer.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.Razor.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.Helpers.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Razor.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.Mvc.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.pdb
+D:\VLUA\VLUA\PPCRental\bin\PPCRental.dll.config
+D:\VLUA\VLUA\PPCRental\bin\PPCRental.dll
+D:\VLUA\VLUA\PPCRental\bin\PPCRental.pdb
+D:\VLUA\VLUA\PPCRental\bin\EntityFramework.dll
+D:\VLUA\VLUA\PPCRental\bin\EntityFramework.SqlServer.dll
+D:\VLUA\VLUA\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+D:\VLUA\VLUA\PPCRental\bin\System.Web.Helpers.dll
+D:\VLUA\VLUA\PPCRental\bin\System.Web.Mvc.dll
+D:\VLUA\VLUA\PPCRental\bin\System.Web.Razor.dll
+D:\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.dll
+D:\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.dll
+D:\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Razor.dll
+D:\VLUA\VLUA\PPCRental\bin\EntityFramework.xml
+D:\VLUA\VLUA\PPCRental\bin\EntityFramework.SqlServer.xml
+D:\VLUA\VLUA\PPCRental\bin\System.Web.Razor.xml
+D:\VLUA\VLUA\PPCRental\bin\System.Web.Helpers.xml
+D:\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.xml
+D:\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.xml
+D:\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Razor.xml
+D:\VLUA\VLUA\PPCRental\bin\System.Web.Mvc.xml
+D:\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+D:\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.csproj.CoreCompileInputs.cache
+D:\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.dll
+D:\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.pdb

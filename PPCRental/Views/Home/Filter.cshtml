@@ -1,34 +1,43 @@
 ﻿@model IEnumerable<PPCRental.Models.PROPERTY>
-
 @{
     ViewBag.Title = "Filter";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div class="parallax-selector"></div>
+<div class="main">
+    <!-- container-fluid header start -->
+    <div class="container-fluid homeheader_bg parallax-window-home">
+        <div class="container content-header">
+            <div class="row fullwidth_bg">
+                <div class="container text-center">
+                    <img class="img-Logo" src="~/Images/Logomain.png" alt="Logomain.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <section class="resultfilter">
     <div class="section-header text-center">
-        <h1 class="heading is-section">Đã tìm thấy @Model.Count() kết quả</h1>
+        <h1 class="heading is-section">Đã tìm thấy <b>@Model.Count()</b> kết quả</h1>
     </div>
     <div class="container Featured-Sales">
-        <div class="row row-md4-content">
+        <div class="row-md4-content">
             @foreach (var item in Model)
             {
-                <div class="col-md-4">
-                    <a href="/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID">
+                <div class="col-md-4 item-content">
+                    <a href='/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID'>
                         <div class="row outside-img">
                             <img class="img-responsive" src="~/Images/@item.Avatar" alt="">
+                            <img class="img-responsive img-last" src="~/Images/nha1.2.jpg" alt="">
                         </div>
                         <div class="list-img-banner">Mới</div>
                         <div class="content-project">
-                            <h3>@item.PropertyName <br>@item.DISTRICT.DistrictName</h3>
-                            <p>@item.Price @item.UnitPrice <br>@item.PROPERTY_TYPE.Description</p>
+                            <h3 style="color:black">@item.PropertyName<br />@item.DISTRICT.DistrictName</h3>
+                            <p style="color:black">@item.Price @item.UnitPrice<br />@item.PROPERTY_TYPE.Description</p>
                         </div>
                     </a>
                 </div>
             }
         </div>
+
     </div>
-    </section>
-    <!--<a class="button-all-sale" href="">Xem thêm</a> -->
-    <div class="parallax-selector"></div>
+</section>

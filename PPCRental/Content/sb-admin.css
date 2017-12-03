@@ -52,6 +52,112 @@ body.fixed-nav {
 .z-1 {
   z-index: 1; }
 
+  .signup-form {
+  color: black;
+  font-size: 20px;
+  margin: 0px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 570px;
+  margin-left: 30%;
+}
+
+ .signup-form p {
+     color: black;
+     font-size: inherit;
+     font-weight: normal;
+ }
+.signup-form img {
+  position: absolute;
+  top: -10%;
+  left: -100%;
+}
+.title-table h1 {
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: normal;
+}
+.title-table {
+  border-bottom: 4px #f6b049 solid;
+  position: relative;
+  background-color: #ffffff;
+}
+.table tr {
+  padding-top: 0;
+}
+.content-table {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f6f7fb;
+  position: relative;
+}
+.label {
+  text-align: right;
+  padding-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.input {
+  height: 25px;
+  width: 350px;
+  border-radius: 5px;
+  margin-top: 0px;   
+  border: 1px #00000094 solid;
+}
+.country {
+  height: 31px;
+  width: 356px;
+  border-radius: 5px;
+}
+.month {
+  height: 25px;
+  width: 100px;
+}
+.day {
+  margin-left: 50px;
+  height: 25px;
+  width: 50px;
+}
+.year {
+  height: 25px;
+  width: 100px;
+  float: right;
+}
+.policy {
+  padding-top: 15px;
+}
+.prop-detail {
+  height: 25px;
+  width: 350px;
+  border-radius: 5px;
+  margin-top: 0px;   
+  border: 1px #00000094 solid;
+}
+.button-area {
+  border-top: 4px #f6b049 solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.button-area button {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: white;
+  font-size: 22px;
+  height: 40px;
+  margin-right: 10px;
+  width: 100px;
+}
+
+
 #mainNav .navbar-collapse {
   overflow: auto;
   max-height: 75vh; }

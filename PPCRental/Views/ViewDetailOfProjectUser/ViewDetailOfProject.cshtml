@@ -1,9 +1,11 @@
 ﻿@model PPCRental.Models.PROPERTY
+@using PPCRental.Models;
 @{
     ViewBag.Title = "ViewDetailOfProject";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    K21T1_Team3Entities db = new K21T1_Team3Entities();
+    var result = db.PROPERTY_FEATURE.ToList().Where(s => s.Feature_ID == Model.ID);
 }
-
 <link href="~/Content/details.css" rel="stylesheet" />
 
 <div class="container-fluid">
@@ -22,7 +24,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">×</button>
-                                <h1 class="modal-title">Modal Header</h1>
+                                <h1 class="modal-title text-center">@Html.ValueFor(model => model.PropertyName)</h1>
                             </div>
                             <div class="modal-body">
 
@@ -37,7 +39,7 @@
 
                                     <!-- Wrapper for slides -->
                                     <div class="carousel-inner">
-                                        @{ 
+                                        @{
                                             var count = 0;
                                         }
                                         @for (int i = 0; i < 10; i++)
@@ -48,8 +50,8 @@
                                         }
 
                                         @*<div class="item">
-                                            <img src="~/Images/@Html.DisplayFor(model=>model.Images)" alt="Chicago" style="width:100%;">
-                                        </div>*@
+                                                <img src="~/Images/@Html.DisplayFor(model=>model.Images)" alt="Chicago" style="width:100%;">
+                                            </div>*@
 
                                     </div>
 
@@ -105,12 +107,12 @@
                 <!-- Right-aligned media object -->
                 <div class="media">
                     <div class="media-body">
-                        <h1 class="media-heading">Right-aligned</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1 class="media-heading">@Html.DisplayFor(model => model.PropertyName)</h1>
+                        @*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>*@
 
                         <h4><strong>The space</strong></h4>
                         <p style="letter-spacing: 1px;">
-                           @Html.DisplayFor(model => model.Content)
+                            @Html.DisplayFor(model => model.Content)
                         </p>
 
                         <!-- button -->
@@ -136,7 +138,7 @@
 
                     </div>
                     <div class="media-right text-center">
-                        <img src="@Html.DisplayFor(model => model.Avatar)" alt="@Html.DisplayFor(model => model.Avatar)" class="media-object img-circle" style="width:64px; height: 64px">Author
+                        <img src="~/Images/@Html.DisplayFor(model => model.Avatar)" class="media-object img-circle" style="width:64px; height: 64px">Author
                     </div>
                 </div>
             </section>
@@ -146,14 +148,16 @@
             <div class="col-md-12" style="border: thin solid;">
                 <div class="content-book">
                     <h2 class="col-md-4">Price:</h2>
-                    <h2 class="col-md-8">@Html.DisplayFor(model => model.Price) @Html.DisplayFor(model => model.UnitPrice)</h2>
+                    <h2 class="col-md-8">@Html.DisplayFor(model => model.Price)&nbsp;@Html.DisplayFor(model => model.UnitPrice)</h2>
                     <hr>
                     <h4><strong>House Infomation</strong></h4>
                     <div class="col-md-12">
                         <div class="row">
                             <ul class="list-inline">
-                                <li><i class="fa fa-bed" aria-hidden="true"></i> @Html.DisplayFor(model => model.BedRoom)</li>
-                                <li><i class="fa fa-bath" aria-hidden="true"></i> @Html.DisplayFor(model => model.BathRoom)</li>
+                                <li class="col-md-6"><i class="fa fa-area-chart" aria-hidden="true"></i>&nbsp;@Html.ValueFor(model => model.Area)&nbsp;</li>
+                                <li class="col-md-6"><i class="fa fa-bed" aria-hidden="true"></i>&nbsp;@Html.ValueFor(model => model.BedRoom)&nbsp;@Html.DisplayNameFor(model => model.BedRoom)</li>
+                                <li class="col-md-6"><i class="fa fa-bath" aria-hidden="true"></i>&nbsp;@Html.ValueFor(model => model.BathRoom)&nbsp;@Html.DisplayNameFor(model => model.BathRoom)</li>
+                                <li class="col-md-6"><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;@Html.ValueFor(model => model.PackingPlace)&nbsp;@Html.DisplayNameFor(model => model.PackingPlace)</li>
                             </ul>
                         </div>
                     </div>
@@ -162,23 +166,28 @@
                     <div class="col-md-12">
                         <div class="row">
                             <ul class="Amenities-tienich">
-                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+
+                                @foreach (var item in db.FEATUREs)
+                                {
+                                    <li id="@item.ID" class="col-md-6"><i class="fa fa-product-hunt" aria-hidden="@item.Status"></i>&nbsp;@item.FeatureName</li>
+                                }
+
+                                @*<li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
+                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>*@
                             </ul>
                         </div>
                     </div>
                     <hr>
                     @*<h4><strong>Price</strong></h4>
-                    <p>Cleaning Fee ₫2342459</p>
-                    <h5><strong>Always communicate through Airbnb</strong></h5>
-                    <p>To protect your payment, never transfer money or communicate outside of the Airbnb website or app.</p>
-                    <hr>*@
+                        <p>Cleaning Fee ₫2342459</p>
+                        <h5><strong>Always communicate through Airbnb</strong></h5>
+                        <p>To protect your payment, never transfer money or communicate outside of the Airbnb website or app.</p>
+                        <hr>*@
                     <h4><strong>Safety features</strong></h4>
                     <div class="safety">
                         <ul class="safety-ul">
@@ -196,21 +205,21 @@
     <div class="parallax-selector"></div>
 
     <section id="section2" class="container-fluid">
-        <h3>Location</h3>
-        <p class="lead">Petur Haukur’s home is located in Akureyri, Northeast, Iceland.</p>
+        <h3>Địa chỉ</h3>
+        <address class="lead">@Html.ValueFor(model => model.STREET.StreetName),&nbsp;Phường&nbsp;@Html.ValueFor(model => model.WARD.WardName),&nbsp;Quận&nbsp;@Html.ValueFor(model => model.DISTRICT.DistrictName),&nbsp;TP. Hồ Chí Minh.</address>
         <div id="googlemaps"></div>
         <script type="text/javascript">
-		      function GoogleMaps() {
-		        var vitri = {lat: 10.802006, lng: 106.592242};
-		        var map = new google.maps.Map(document.getElementById('googlemaps'), {
-		          zoom: 12,
-		          center: vitri
-		        });
-		        var marker = new google.maps.Marker({
-		          position: vitri,
-		          map: map
-		        });
-		      }
+                    function GoogleMaps() {
+                        var vitri = { lat: 10.802006, lng: 106.592242 };
+                        var map = new google.maps.Map(document.getElementById('googlemaps'), {
+                            zoom: 12,
+                            center: vitri
+                        });
+                        var marker = new google.maps.Marker({
+                            position: vitri,
+                            map: map
+                        });
+                    }
         </script>
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtTijdOrawSLXkwdTOT1MKXE7Y0-pVcFI&callback=GoogleMaps">
@@ -219,6 +228,29 @@
 </div>
 
 <div class="parallax-selector"></div>
+
+<div class="container property-type-detail">
+    <h2 class="h2-projectlq">Các dự án liên quan</h2>
+    <div class="duanlienquan">
+        @{foreach (var item in db.PROPERTies)
+            {
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail width-thumb">
+                        <img src="~/Images/@item.Images" alt="@item.Images">
+                        <div class="caption">
+                            <h3>@item.PropertyName</h3>
+                            <p class="content-property-type-detail">@item.Content</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Mua</a> <a href="/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID" class="btn btn-default" role="button">Xem chi tiết</a></p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<div class="parallax-selector"></div>
+
 
 
 

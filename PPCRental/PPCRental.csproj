@@ -86,11 +86,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Agency\Models\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\ViewAgency\" />
     <Folder Include="Views\ViewList\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\Agency\AgencyAreaRegistration.cs" />
     <Compile Include="Areas\Agency\Controllers\PropertyAgencyController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ViewDetailOfProjectUserController.cs" />
     <Compile Include="Controllers\ViewListOfProjectController.cs" />
@@ -146,8 +149,14 @@
     <Content Include="Content\dataTables.bootstrap4.css" />
     <Content Include="Content\details.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\login-style.css" />
+    <Content Include="Content\post.css" />
     <Content Include="Content\sb-admin.css" />
+    <Content Include="Content\select2.min.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Images\112759117.jpg" />
+    <Content Include="Images\bgroundlist.jpg" />
     <Content Include="Images\pic01.jpg" />
     <Content Include="Images\pic02.jpg" />
     <Content Include="Images\pic03.jpg" />
@@ -158,6 +167,30 @@
     <Content Include="Images\pic08.jpg" />
     <Content Include="Images\pic09.jpg" />
     <Content Include="Images\pic10.jpg" />
+    <Content Include="Images\pic11.jpeg" />
+    <Content Include="Images\pic12.jpg" />
+    <Content Include="Images\pic13.jpg" />
+    <Content Include="Images\pic14.jpg" />
+    <Content Include="Images\pic15.jpg" />
+    <Content Include="Images\pic16.jpg" />
+    <Content Include="Images\pic17.jpeg" />
+    <Content Include="Images\pic18.jpg" />
+    <Content Include="Images\pic19.jpg" />
+    <Content Include="Images\pic20.jpg" />
+    <Content Include="Images\pic21.jpg" />
+    <Content Include="Images\pic22.jpg" />
+    <Content Include="Images\pic23.jpg" />
+    <Content Include="Images\pic24.jpg" />
+    <Content Include="Images\pic25.jpg" />
+    <Content Include="Images\pic26.jpg" />
+    <Content Include="Images\pic27.jpg" />
+    <Content Include="Images\pic28.jpg" />
+    <Content Include="Images\pic29.jpg" />
+    <Content Include="Images\pic30.jpg" />
+    <Content Include="Images\PIS_6656-Edit-stamp.png" />
+    <Content Include="Images\PIS_7432-Edit-stamp.jpg" />
+    <Content Include="Images\viewlist.jpg" />
+    <Content Include="Images\viewlist2.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -172,7 +205,13 @@
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <Content Include="Areas\Agency\Views\PropertyAgency\IndexAgency.cshtml" />
     <Content Include="Areas\Agency\Views\PropertyAgency\Edit.cshtml" />
+    <Content Include="fonts\UniSansHeavy.otf" />
+    <Content Include="fonts\UniSansHeavyItalic.otf" />
+    <Content Include="fonts\UniSansThin.otf" />
+    <Content Include="fonts\UniSansThinItalic.otf" />
+    <Content Include="fonts\AndesRoundedLight.otf" />
     <Content Include="Areas\Agency\Views\PropertyAgency\Create.cshtml" />
+    <Content Include="Areas\Agency\Views\PropertyAgency\Login.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -187,6 +226,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\sb-admin-datatables.min.js" />
     <Content Include="Scripts\sb-admin.min.js" />
+    <Content Include="Scripts\select2.min.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
