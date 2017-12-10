@@ -86,7 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Agency\Models\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="Views\ViewAgency\" />
     <Folder Include="Views\ViewList\" />
   </ItemGroup>
@@ -149,14 +148,23 @@
     <Content Include="Content\dataTables.bootstrap4.css" />
     <Content Include="Content\details.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\froala_editor.pkgd.min.css" />
+    <Content Include="Content\froala_style.min.css" />
     <Content Include="Content\login-style.css" />
     <Content Include="Content\post.css" />
     <Content Include="Content\sb-admin.css" />
+    <Content Include="Content\select2.css" />
     <Content Include="Content\select2.min.css" />
+    <Content Include="Content\style.bundle.css" />
     <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Content\StyleSheet2.css" />
+    <Content Include="Content\vendors.bundle.css" />
+    <Content Include="fonts\favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Images\112759117.jpg" />
     <Content Include="Images\bgroundlist.jpg" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\hom.jpg" />
     <Content Include="Images\pic01.jpg" />
     <Content Include="Images\pic02.jpg" />
     <Content Include="Images\pic03.jpg" />
@@ -224,9 +232,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\login.js" />
     <Content Include="Scripts\sb-admin-datatables.min.js" />
     <Content Include="Scripts\sb-admin.min.js" />
+    <Content Include="Scripts\scripts.bundle.js" />
     <Content Include="Scripts\select2.min.js" />
+    <Content Include="Scripts\vendors.bundle.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -279,6 +290,11 @@
     <Content Include="Scripts\ppc.js" />
     <Content Include="Images\home.png" />
     <Content Include="Views\Home\Filter.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Shared\AccountLogin.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\Model1.edmx">

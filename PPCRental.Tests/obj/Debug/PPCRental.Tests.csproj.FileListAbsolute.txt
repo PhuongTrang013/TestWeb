@@ -215,29 +215,3 @@ C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental.Tests\bin\Debug\EntityFramew
 C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental.Tests\obj\Debug\PPCRental.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental.Tests\obj\Debug\PPCRental.Tests.dll
 C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental.Tests\obj\Debug\PPCRental.Tests.pdb
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\PPCRental.Tests.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\PPCRental.Tests.pdb
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\nunit.framework.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\PPCRental.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.Helpers.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.Mvc.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.Razor.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.WebPages.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.WebPages.Razor.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\EntityFramework.dll
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\PPCRental.pdb
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\PPCRental.dll.config
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\nunit.framework.xml
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.Razor.xml
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.Helpers.xml
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.WebPages.xml
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.WebPages.Razor.xml
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\System.Web.Mvc.xml
-D:\VLUA\VLUA\PPCRental.Tests\bin\Debug\EntityFramework.xml
-D:\VLUA\VLUA\PPCRental.Tests\obj\Debug\PPCRental.Tests.csprojResolveAssemblyReference.cache
-D:\VLUA\VLUA\PPCRental.Tests\obj\Debug\PPCRental.Tests.csproj.CoreCompileInputs.cache
-D:\VLUA\VLUA\PPCRental.Tests\obj\Debug\PPCRental.Tests.dll
-D:\VLUA\VLUA\PPCRental.Tests\obj\Debug\PPCRental.Tests.pdb

@@ -23,11 +23,11 @@
         <div class="row-md4-content">
             @foreach (var item in Model)
             {
-                <div class="col-md-4 item-content">
+                <div class="col-md-4">
                     <a href='/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID'>
                         <div class="row outside-img">
                             <img class="img-responsive" src="~/Images/@item.Avatar" alt="">
-                            <img class="img-responsive img-last" src="~/Images/nha1.2.jpg" alt="">
+                            <img class="img-responsive img-last" src="~/Images/@item.Images" alt="">
                         </div>
                         <div class="list-img-banner">Mới</div>
                         <div class="content-project">
@@ -38,6 +38,5 @@
                 </div>
             }
         </div>
-
     </div>
 </section>

@@ -98,7 +98,7 @@
                     @{ int count = 0; }
                     @{ foreach (var item in Model)
                         {
-                            <div class="col-md-4 item-content">
+                            <div class="col-md-4">
                                 <a href='/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID'>
                                     <div class="row outside-img">
                                         <img class="img-responsive" src="~/Images/@item.Avatar" alt="">
@@ -259,5 +259,4 @@
     <script>
         $('#Quan_ID').select2();
     </script>
-
 }
