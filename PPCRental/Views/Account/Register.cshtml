@@ -15,22 +15,22 @@
     </div>
     <form class="m-login__form m-form" action="@Url.Action("Register", "Account")" method="post">
         <div class="form-group m-form__group">
-            <input class="form-control m-input" type="text" placeholder="Họ và Tên" name="fullname">
+            <input class="form-control m-input" type="text" placeholder="Họ và Tên" name="fullname" required>
         </div>
         <div class="form-group m-form__group">
-            <input class="form-control m-input" type="text" placeholder="Địa chỉ Email" name="email" autocomplete="off">
+            <input class="form-control m-input" type="text" placeholder="Địa chỉ Email" name="email" autocomplete="off" required>
         </div>
         <div class="form-group m-form__group">
-            <input class="form-control m-input" type="text" placeholder="Địa chỉ" name="address" autocomplete="off">
+            <input class="form-control m-input" type="text" placeholder="Địa chỉ" name="address" autocomplete="off" required>
         </div>
         <div class="form-group m-form__group">
-            <input class="form-control m-input" type="text" placeholder="Số điện thoại" name="phone" autocomplete="off">
+            <input class="form-control m-input" type="text" placeholder="Số điện thoại" name="phone" autocomplete="off" required>
         </div>
         <div class="form-group m-form__group">
-            <input class="form-control m-input" type="password" placeholder="Mật khẩu" name="password">
+            <input class="form-control m-input" type="password" placeholder="Mật khẩu" name="password" required>
         </div>
         <div class="form-group m-form__group">
-            <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Xác nhận Mật khẩu" name="rpassword">
+            <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Xác nhận Mật khẩu" name="rpassword" required>
         </div>
         <!-- <div class="row form-group m-form__group m-login__form-sub">
             <div class="col m--align-left">

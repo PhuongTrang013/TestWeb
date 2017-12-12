@@ -15,10 +15,10 @@ namespace PPCRental.Areas.Agency.Controllers
         public ActionResult IndexAgency()
         {
             var us = db.PROPERTies.Find(int.Parse(Session["UserID"].ToString()));
-            //var product == null;
+            //var product
             //if (us.USER.Role == "1")
             //{
-                var product = db.PROPERTies.ToList().Where(x => (x.Status_ID == 1 || x.Status_ID == 3) && x.UserID == int.Parse(Session["UserID"].ToString())).OrderByDescending(x => x.ID);
+                var product = db.PROPERTies.ToList().Where(x => x.Status_ID == 1 || x.Status_ID == 3).OrderByDescending(x => x.ID);
             //}
             
             return View(product);

@@ -1,4 +1,4 @@
-@charset "UTF-8"; /*!
+﻿@charset "UTF-8"; /*!
  * Bootstrap v4.0.0-beta (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
@@ -33467,18 +33467,19 @@ select.m-select2 {
     }
 
         .m-login.m-login--1 .m-login__wrapper .m-login__logo {
-            text-align: center;
-            margin: 0 auto 4rem auto
+            width: 250px;
+            height: auto;
         }
 
         .m-login.m-login--1 .m-login__wrapper .m-login__head {
+            text-align: center;
             margin-top: 1rem
         }
 
             .m-login.m-login--1 .m-login__wrapper .m-login__head .m-login__title {
                 text-align: center;
-                font-size: 1.5rem
-                color: black;
+                font-size: 1.5rem;
+                margin-top: 20px;
             }
 
             .m-login.m-login--1 .m-login__wrapper .m-login__head .m-login__desc {
@@ -33650,7 +33651,8 @@ select.m-select2 {
         }
 
             .m-login.m-login--1 .m-login__aside .m-login__wrapper .m-login__logo {
-                margin: 2rem auto 3.5rem auto
+                width: 250px;
+                height: auto;
             }
 
     .m-login.m-login--1 .m-login__content {
@@ -33698,17 +33700,19 @@ select.m-select2 {
         }
 
             .m-login.m-login--2 .m-login__wrapper .m-login__container .m-login__logo {
-                text-align: center;
-                margin: 0 auto 4rem auto
+                width: 250px;
+                height: auto;
             }
 
             .m-login.m-login--2 .m-login__wrapper .m-login__container .m-login__head {
+                text-align: center;
                 margin-top: 1rem
             }
 
                 .m-login.m-login--2 .m-login__wrapper .m-login__container .m-login__head .m-login__title {
                     text-align: center;
-                    font-size: 30px
+                    font-size: 30px;
+                    margin-top: 20px
                 }
 
                 .m-login.m-login--2 .m-login__wrapper .m-login__container .m-login__head .m-login__desc {
@@ -34235,21 +34239,23 @@ select.m-select2 {
         .m-login.m-login--5 .m-login__wrapper-2 .m-login__contanier {
             width: 430px;
             margin: 0 auto;
-            padding: 0 1.5rem
+            padding: 0 1.5rem;
         }
 
             .m-login.m-login--5 .m-login__wrapper-2 .m-login__contanier .m-login__logo {
-                text-align: center;
-                margin: 0 auto 4rem auto
+                width: 250px;
+                height: auto;
             }
 
             .m-login.m-login--5 .m-login__wrapper-2 .m-login__contanier .m-login__head {
-                margin-top: 1rem
+                margin-top: 1rem;
+                text-align: center
             }
 
                 .m-login.m-login--5 .m-login__wrapper-2 .m-login__contanier .m-login__head .m-login__title {
                     text-align: center;
-                    font-size: 1.5rem
+                    font-size: 1.5rem;
+                    margin-top: 20px
                 }
 
                 .m-login.m-login--5 .m-login__wrapper-2 .m-login__contanier .m-login__head .m-login__desc {
