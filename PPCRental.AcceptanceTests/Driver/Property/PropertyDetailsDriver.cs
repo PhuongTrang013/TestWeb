@@ -28,15 +28,22 @@ namespace PPCRental.AcceptanceTests.Driver.Property
             {
                 foreach (var item in project.Rows)
                 {
+                    var property = item["PropertyName"].ToString();
+                    var content = item["Content"].ToString();
+                    var protype = item["PropertyType"].ToString();
+                    var street = item["Street"].ToString();
+                    var ward = item["Ward"].ToString();
+                    var district = item["District"].ToString();
+
                     PROPERTY pro = new PROPERTY
                     {
-                        PropertyName = item["PropertyName"],
-                        Content = item["Content"],
+                        PropertyName = property,
+                        Content = content,
                         Price = int.Parse(item["Price"]),
-                        PropertyType_ID = db.PROPERTY_TYPE.FirstOrDefault(t => t.CodeType == item["PropertyType"]).ID,
-                        Street_ID = db.STREETs.FirstOrDefault(s => s.StreetName == item["Street"]).ID,
-                        Ward_ID = db.WARDs.FirstOrDefault(s => s.WardName == item["Ward"]).ID,
-                        District_ID = db.DISTRICTs.FirstOrDefault(s => s.DistrictName == item["District"]).ID
+                        PropertyType_ID = db.PROPERTY_TYPE.FirstOrDefault(t => t.CodeType == protype).ID,
+                        Street_ID = db.STREETs.FirstOrDefault(s => s.StreetName == street).ID,
+                        Ward_ID = db.WARDs.FirstOrDefault(s => s.WardName == ward).ID,
+                        District_ID = db.DISTRICTs.FirstOrDefault(s => s.DistrictName == district).ID
                     };
 
                     //_context.ReferenceDetails.Add(
@@ -59,14 +66,22 @@ namespace PPCRental.AcceptanceTests.Driver.Property
             var actualProjectDetails = _result.Model<PROPERTY>();
 
             var db = new K21T1_Tteam13Entities();
+
+            var property = expectedProjectDetails["PropertyName"].ToString();
+            var content = expectedProjectDetails["Content"].ToString();
+            var protype = expectedProjectDetails["PropertyType"].ToString();
+            var street = expectedProjectDetails["Street"].ToString();
+            var ward = expectedProjectDetails["Ward"].ToString();
+            var district = expectedProjectDetails["District"].ToString();
+
             //Assert
             actualProjectDetails.Should().Match<PROPERTY>(
-                b => b.PropertyName == expectedProjectDetails["PropertyName"]
-                && b.PROPERTY_TYPE.ToString() == expectedProjectDetails["PropertyType"]
-                && b.Content == expectedProjectDetails["Content"]
-                && b.Street_ID == db.STREETs.FirstOrDefault(d => d.StreetName == expectedProjectDetails["Street"]).ID
-                && b.District_ID == db.DISTRICTs.FirstOrDefault(e => e.DistrictName == expectedProjectDetails["District"]).ID
-                && b.Ward_ID == db.WARDs.FirstOrDefault(f => f.WardName == expectedProjectDetails["Ward"]).ID
+                b => b.PropertyName == property
+                && b.PropertyType_ID == db.PROPERTY_TYPE.FirstOrDefault(t => t.TypeCode == protype).ID
+                && b.Content == content
+                && b.Street_ID == db.STREETs.FirstOrDefault(d => d.StreetName == street).ID
+                && b.District_ID == db.DISTRICTs.FirstOrDefault(e => e.DistrictName == district).ID
+                && b.Ward_ID == db.WARDs.FirstOrDefault(f => f.WardName == ward).ID
                 && b.Price == int.Parse(expectedProjectDetails["Price"]));
         }
 
