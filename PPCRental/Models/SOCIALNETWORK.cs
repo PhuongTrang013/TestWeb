@@ -12,13 +12,10 @@ namespace PPCRental.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PROPERTY_FEATURE
+    public partial class SOCIALNETWORK
     {
         public int ID { get; set; }
-        public Nullable<int> Property_ID { get; set; }
-        public Nullable<int> Feature_ID { get; set; }
-    
-        public virtual FEATURE FEATURE { get; set; }
-        public virtual PROPERTY PROPERTY { get; set; }
+        public string SocialNetworkName { get; set; }
+        public string Link { get; set; }
     }
 }

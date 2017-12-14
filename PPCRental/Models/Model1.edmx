@@ -4,7 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="K21T1_Team3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="team13Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CONTACT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email_Contact" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone_Contact" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Address_Contact" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
         <EntityType Name="DISTRICT">
           <Key>
             <PropertyRef Name="ID" />
@@ -20,6 +29,25 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FeatureName" Type="nvarchar" MaxLength="50" />
           <Property Name="Status" Type="bit" />
+          <Property Name="Icon" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IMAGES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImgName" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="MESSAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CEmail" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="CPhone" Type="varchar" MaxLength="20" />
+          <Property Name="CMess" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="CCreate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="PROJECT_STATUS">
           <Key>
@@ -64,6 +92,14 @@
           <Property Name="Property_ID" Type="int" />
           <Property Name="Feature_ID" Type="int" />
         </EntityType>
+        <EntityType Name="PROPERTY_IMG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Property_ID" Type="int" />
+          <Property Name="Img_ID" Type="int" />
+        </EntityType>
         <EntityType Name="PROPERTY_TYPE">
           <Key>
             <PropertyRef Name="ID" />
@@ -72,6 +108,22 @@
           <Property Name="CodeType" Type="varchar" MaxLength="10" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
           <Property Name="Status" Type="bit" />
+          <Property Name="TypeCode" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="SOCIALNETWORK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SocialNetworkName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Link" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <EntityType Name="STREET">
           <Key>
@@ -81,6 +133,16 @@
           <Property Name="StreetName" Type="nvarchar" MaxLength="50" />
           <Property Name="District_ID" Type="int" />
           <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="USER">
           <Key>
@@ -92,8 +154,9 @@
           <Property Name="FullName" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="varchar" MaxLength="15" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" />
-          <Property Name="Role" Type="nvarchar" MaxLength="30" />
+          <Property Name="Role_ID" Type="int" />
           <Property Name="Status" Type="bit" />
+          <Property Name="UserCode" Type="varchar" MaxLength="11" />
         </EntityType>
         <EntityType Name="WARD">
           <Key>
@@ -136,6 +199,30 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="PROPERTY_FEATURE">
+              <PropertyRef Name="Property_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROPERTY_IMG_IMAGES">
+          <End Role="IMAGES" Type="Self.IMAGES" Multiplicity="0..1" />
+          <End Role="PROPERTY_IMG" Type="Self.PROPERTY_IMG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMAGES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROPERTY_IMG">
+              <PropertyRef Name="Img_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROPERTY_IMG_PROPERTY">
+          <End Role="PROPERTY" Type="Self.PROPERTY" Multiplicity="0..1" />
+          <End Role="PROPERTY_IMG" Type="Self.PROPERTY_IMG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROPERTY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROPERTY_IMG">
               <PropertyRef Name="Property_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -224,6 +311,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_USER_ROLE">
+          <End Role="ROLE" Type="Self.ROLE" Multiplicity="0..1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_WARD_DISTRICT">
           <End Role="DISTRICT" Type="Self.DISTRICT" Multiplicity="0..1" />
           <End Role="WARD" Type="Self.WARD" Multiplicity="*" />
@@ -236,14 +335,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="K21T1_Team3ModelStoreContainer">
+        <EntityContainer Name="team13ModelStoreContainer">
+          <EntitySet Name="CONTACT" EntityType="Self.CONTACT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DISTRICT" EntityType="Self.DISTRICT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FEATURE" EntityType="Self.FEATURE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMAGES" EntityType="Self.IMAGES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MESSAGE" EntityType="Self.MESSAGE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PROJECT_STATUS" EntityType="Self.PROJECT_STATUS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PROPERTY" EntityType="Self.PROPERTY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PROPERTY_FEATURE" EntityType="Self.PROPERTY_FEATURE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROPERTY_IMG" EntityType="Self.PROPERTY_IMG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PROPERTY_TYPE" EntityType="Self.PROPERTY_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLE" EntityType="Self.ROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOCIALNETWORK" EntityType="Self.SOCIALNETWORK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="STREET" EntityType="Self.STREET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WARD" EntityType="Self.WARD" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_PROPERTY_DISTRICT" Association="Self.FK_PROPERTY_DISTRICT">
@@ -257,6 +363,14 @@
           <AssociationSet Name="FK_PROPERTY_FEATURE_PROPERTY" Association="Self.FK_PROPERTY_FEATURE_PROPERTY">
             <End Role="PROPERTY" EntitySet="PROPERTY" />
             <End Role="PROPERTY_FEATURE" EntitySet="PROPERTY_FEATURE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROPERTY_IMG_IMAGES" Association="Self.FK_PROPERTY_IMG_IMAGES">
+            <End Role="IMAGES" EntitySet="IMAGES" />
+            <End Role="PROPERTY_IMG" EntitySet="PROPERTY_IMG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROPERTY_IMG_PROPERTY" Association="Self.FK_PROPERTY_IMG_PROPERTY">
+            <End Role="PROPERTY" EntitySet="PROPERTY" />
+            <End Role="PROPERTY_IMG" EntitySet="PROPERTY_IMG" />
           </AssociationSet>
           <AssociationSet Name="FK_PROPERTY_PROJECT_STATUS" Association="Self.FK_PROPERTY_PROJECT_STATUS">
             <End Role="PROJECT_STATUS" EntitySet="PROJECT_STATUS" />
@@ -286,6 +400,10 @@
             <End Role="DISTRICT" EntitySet="DISTRICT" />
             <End Role="STREET" EntitySet="STREET" />
           </AssociationSet>
+          <AssociationSet Name="FK_USER_ROLE" Association="Self.FK_USER_ROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
           <AssociationSet Name="FK_WARD_DISTRICT" Association="Self.FK_WARD_DISTRICT">
             <End Role="DISTRICT" EntitySet="DISTRICT" />
             <End Role="WARD" EntitySet="WARD" />
@@ -295,7 +413,16 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="K21T1_Team3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="team13Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CONTACT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email_Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone_Contact" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address_Contact" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="DISTRICT">
           <Key>
             <PropertyRef Name="ID" />
@@ -314,7 +441,27 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FeatureName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
+          <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="PROPERTY_FEATURE" Relationship="Self.FK_PROPERTY_FEATURE_FEATURE" FromRole="FEATURE" ToRole="PROPERTY_FEATURE" />
+        </EntityType>
+        <EntityType Name="IMAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImgName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PROPERTY_IMG" Relationship="Self.FK_PROPERTY_IMG_IMAGES" FromRole="IMAGES" ToRole="PROPERTY_IMG" />
+        </EntityType>
+        <EntityType Name="MESSAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CMess" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CCreate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="PROJECT_STATUS">
           <Key>
@@ -354,6 +501,7 @@
           <NavigationProperty Name="DISTRICT" Relationship="Self.FK_PROPERTY_DISTRICT" FromRole="PROPERTY" ToRole="DISTRICT" />
           <NavigationProperty Name="PROJECT_STATUS" Relationship="Self.FK_PROPERTY_PROJECT_STATUS" FromRole="PROPERTY" ToRole="PROJECT_STATUS" />
           <NavigationProperty Name="PROPERTY_FEATURE" Relationship="Self.FK_PROPERTY_FEATURE_PROPERTY" FromRole="PROPERTY" ToRole="PROPERTY_FEATURE" />
+          <NavigationProperty Name="PROPERTY_IMG" Relationship="Self.FK_PROPERTY_IMG_PROPERTY" FromRole="PROPERTY" ToRole="PROPERTY_IMG" />
           <NavigationProperty Name="PROPERTY_TYPE" Relationship="Self.FK_PROPERTY_PROPERTY_TYPE" FromRole="PROPERTY" ToRole="PROPERTY_TYPE" />
           <NavigationProperty Name="STREET" Relationship="Self.FK_PROPERTY_STREET1" FromRole="PROPERTY" ToRole="STREET" />
           <NavigationProperty Name="USER" Relationship="Self.FK_PROPERTY_USER" FromRole="PROPERTY" ToRole="USER" />
@@ -370,6 +518,16 @@
           <NavigationProperty Name="FEATURE" Relationship="Self.FK_PROPERTY_FEATURE_FEATURE" FromRole="PROPERTY_FEATURE" ToRole="FEATURE" />
           <NavigationProperty Name="PROPERTY" Relationship="Self.FK_PROPERTY_FEATURE_PROPERTY" FromRole="PROPERTY_FEATURE" ToRole="PROPERTY" />
         </EntityType>
+        <EntityType Name="PROPERTY_IMG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Property_ID" Type="Int32" />
+          <Property Name="Img_ID" Type="Int32" />
+          <NavigationProperty Name="IMAGE" Relationship="Self.FK_PROPERTY_IMG_IMAGES" FromRole="PROPERTY_IMG" ToRole="IMAGES" />
+          <NavigationProperty Name="PROPERTY" Relationship="Self.FK_PROPERTY_IMG_PROPERTY" FromRole="PROPERTY_IMG" ToRole="PROPERTY" />
+        </EntityType>
         <EntityType Name="PROPERTY_TYPE">
           <Key>
             <PropertyRef Name="ID" />
@@ -378,7 +536,24 @@
           <Property Name="CodeType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
+          <Property Name="TypeCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="PROPERTies" Relationship="Self.FK_PROPERTY_PROPERTY_TYPE" FromRole="PROPERTY_TYPE" ToRole="PROPERTY" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="USERs" Relationship="Self.FK_USER_ROLE" FromRole="ROLE" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="SOCIALNETWORK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SocialNetworkName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="STREET">
           <Key>
@@ -391,6 +566,16 @@
           <NavigationProperty Name="DISTRICT" Relationship="Self.FK_STREET_DISTRICT" FromRole="STREET" ToRole="DISTRICT" />
           <NavigationProperty Name="PROPERTies" Relationship="Self.FK_PROPERTY_STREET1" FromRole="STREET" ToRole="PROPERTY" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="USER">
           <Key>
             <PropertyRef Name="ID" />
@@ -401,10 +586,12 @@
           <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Role" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Role_ID" Type="Int32" />
           <Property Name="Status" Type="Boolean" />
+          <Property Name="UserCode" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="PROPERTies" Relationship="Self.FK_PROPERTY_USER" FromRole="USER" ToRole="PROPERTY" />
           <NavigationProperty Name="PROPERTies1" Relationship="Self.FK_PROPERTY_USER1" FromRole="USER" ToRole="PROPERTY" />
+          <NavigationProperty Name="ROLE" Relationship="Self.FK_USER_ROLE" FromRole="USER" ToRole="ROLE" />
         </EntityType>
         <EntityType Name="WARD">
           <Key>
@@ -465,6 +652,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PROPERTY_IMG_IMAGES">
+          <End Role="IMAGES" Type="Self.IMAGE" Multiplicity="0..1" />
+          <End Role="PROPERTY_IMG" Type="Self.PROPERTY_IMG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMAGES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROPERTY_IMG">
+              <PropertyRef Name="Img_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PROPERTY_PROJECT_STATUS">
           <End Role="PROJECT_STATUS" Type="Self.PROJECT_STATUS" Multiplicity="0..1" />
           <End Role="PROPERTY" Type="Self.PROPERTY" Multiplicity="*" />
@@ -485,6 +684,18 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="PROPERTY_FEATURE">
+              <PropertyRef Name="Property_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROPERTY_IMG_PROPERTY">
+          <End Role="PROPERTY" Type="Self.PROPERTY" Multiplicity="0..1" />
+          <End Role="PROPERTY_IMG" Type="Self.PROPERTY_IMG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROPERTY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROPERTY_IMG">
               <PropertyRef Name="Property_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -549,14 +760,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="K21T1_Team3Entities" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_USER_ROLE">
+          <End Role="ROLE" Type="Self.ROLE" Multiplicity="0..1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="team13Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CONTACTs" EntityType="Self.CONTACT" />
           <EntitySet Name="DISTRICTs" EntityType="Self.DISTRICT" />
           <EntitySet Name="FEATUREs" EntityType="Self.FEATURE" />
+          <EntitySet Name="IMAGES" EntityType="Self.IMAGE" />
+          <EntitySet Name="MESSAGEs" EntityType="Self.MESSAGE" />
           <EntitySet Name="PROJECT_STATUS" EntityType="Self.PROJECT_STATUS" />
           <EntitySet Name="PROPERTies" EntityType="Self.PROPERTY" />
           <EntitySet Name="PROPERTY_FEATURE" EntityType="Self.PROPERTY_FEATURE" />
+          <EntitySet Name="PROPERTY_IMG" EntityType="Self.PROPERTY_IMG" />
           <EntitySet Name="PROPERTY_TYPE" EntityType="Self.PROPERTY_TYPE" />
+          <EntitySet Name="ROLEs" EntityType="Self.ROLE" />
+          <EntitySet Name="SOCIALNETWORKs" EntityType="Self.SOCIALNETWORK" />
           <EntitySet Name="STREETs" EntityType="Self.STREET" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="USERs" EntityType="Self.USER" />
           <EntitySet Name="WARDs" EntityType="Self.WARD" />
           <AssociationSet Name="FK_PROPERTY_DISTRICT" Association="Self.FK_PROPERTY_DISTRICT">
@@ -575,6 +805,10 @@
             <End Role="FEATURE" EntitySet="FEATUREs" />
             <End Role="PROPERTY_FEATURE" EntitySet="PROPERTY_FEATURE" />
           </AssociationSet>
+          <AssociationSet Name="FK_PROPERTY_IMG_IMAGES" Association="Self.FK_PROPERTY_IMG_IMAGES">
+            <End Role="IMAGES" EntitySet="IMAGES" />
+            <End Role="PROPERTY_IMG" EntitySet="PROPERTY_IMG" />
+          </AssociationSet>
           <AssociationSet Name="FK_PROPERTY_PROJECT_STATUS" Association="Self.FK_PROPERTY_PROJECT_STATUS">
             <End Role="PROJECT_STATUS" EntitySet="PROJECT_STATUS" />
             <End Role="PROPERTY" EntitySet="PROPERTies" />
@@ -582,6 +816,10 @@
           <AssociationSet Name="FK_PROPERTY_FEATURE_PROPERTY" Association="Self.FK_PROPERTY_FEATURE_PROPERTY">
             <End Role="PROPERTY" EntitySet="PROPERTies" />
             <End Role="PROPERTY_FEATURE" EntitySet="PROPERTY_FEATURE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROPERTY_IMG_PROPERTY" Association="Self.FK_PROPERTY_IMG_PROPERTY">
+            <End Role="PROPERTY" EntitySet="PROPERTies" />
+            <End Role="PROPERTY_IMG" EntitySet="PROPERTY_IMG" />
           </AssociationSet>
           <AssociationSet Name="FK_PROPERTY_PROPERTY_TYPE" Association="Self.FK_PROPERTY_PROPERTY_TYPE">
             <End Role="PROPERTY_TYPE" EntitySet="PROPERTY_TYPE" />
@@ -603,15 +841,29 @@
             <End Role="WARD" EntitySet="WARDs" />
             <End Role="PROPERTY" EntitySet="PROPERTies" />
           </AssociationSet>
+          <AssociationSet Name="FK_USER_ROLE" Association="Self.FK_USER_ROLE">
+            <End Role="ROLE" EntitySet="ROLEs" />
+            <End Role="USER" EntitySet="USERs" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="K21T1_Team3ModelStoreContainer" CdmEntityContainer="K21T1_Team3Entities">
+        <EntityContainerMapping StorageEntityContainer="team13ModelStoreContainer" CdmEntityContainer="team13Entities">
+          <EntitySetMapping Name="CONTACTs">
+            <EntityTypeMapping TypeName="team13Model.CONTACT">
+              <MappingFragment StoreEntitySet="CONTACT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Email_Contact" ColumnName="Email_Contact" />
+                <ScalarProperty Name="Phone_Contact" ColumnName="Phone_Contact" />
+                <ScalarProperty Name="Address_Contact" ColumnName="Address_Contact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DISTRICTs">
-            <EntityTypeMapping TypeName="K21T1_Team3Model.DISTRICT">
+            <EntityTypeMapping TypeName="team13Model.DISTRICT">
               <MappingFragment StoreEntitySet="DISTRICT">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
@@ -620,16 +872,37 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FEATUREs">
-            <EntityTypeMapping TypeName="K21T1_Team3Model.FEATURE">
+            <EntityTypeMapping TypeName="team13Model.FEATURE">
               <MappingFragment StoreEntitySet="FEATURE">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FeatureName" ColumnName="FeatureName" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMAGES">
+            <EntityTypeMapping TypeName="team13Model.IMAGE">
+              <MappingFragment StoreEntitySet="IMAGES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESSAGEs">
+            <EntityTypeMapping TypeName="team13Model.MESSAGE">
+              <MappingFragment StoreEntitySet="MESSAGE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CName" ColumnName="CName" />
+                <ScalarProperty Name="CEmail" ColumnName="CEmail" />
+                <ScalarProperty Name="CPhone" ColumnName="CPhone" />
+                <ScalarProperty Name="CMess" ColumnName="CMess" />
+                <ScalarProperty Name="CCreate" ColumnName="CCreate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PROJECT_STATUS">
-            <EntityTypeMapping TypeName="K21T1_Team3Model.PROJECT_STATUS">
+            <EntityTypeMapping TypeName="team13Model.PROJECT_STATUS">
               <MappingFragment StoreEntitySet="PROJECT_STATUS">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
@@ -638,7 +911,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PROPERTies">
-            <EntityTypeMapping TypeName="K21T1_Team3Model.PROPERTY">
+            <EntityTypeMapping TypeName="team13Model.PROPERTY">
               <MappingFragment StoreEntitySet="PROPERTY">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
@@ -666,7 +939,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PROPERTY_FEATURE">
-            <EntityTypeMapping TypeName="K21T1_Team3Model.PROPERTY_FEATURE">
+            <EntityTypeMapping TypeName="team13Model.PROPERTY_FEATURE">
               <MappingFragment StoreEntitySet="PROPERTY_FEATURE">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
@@ -674,18 +947,45 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PROPERTY_IMG">
+            <EntityTypeMapping TypeName="team13Model.PROPERTY_IMG">
+              <MappingFragment StoreEntitySet="PROPERTY_IMG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
+                <ScalarProperty Name="Img_ID" ColumnName="Img_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PROPERTY_TYPE">
-            <EntityTypeMapping TypeName="K21T1_Team3Model.PROPERTY_TYPE">
+            <EntityTypeMapping TypeName="team13Model.PROPERTY_TYPE">
               <MappingFragment StoreEntitySet="PROPERTY_TYPE">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="CodeType" ColumnName="CodeType" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLEs">
+            <EntityTypeMapping TypeName="team13Model.ROLE">
+              <MappingFragment StoreEntitySet="ROLE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOCIALNETWORKs">
+            <EntityTypeMapping TypeName="team13Model.SOCIALNETWORK">
+              <MappingFragment StoreEntitySet="SOCIALNETWORK">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SocialNetworkName" ColumnName="SocialNetworkName" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="STREETs">
-            <EntityTypeMapping TypeName="K21T1_Team3Model.STREET">
+            <EntityTypeMapping TypeName="team13Model.STREET">
               <MappingFragment StoreEntitySet="STREET">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="StreetName" ColumnName="StreetName" />
@@ -694,8 +994,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="team13Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="USERs">
-            <EntityTypeMapping TypeName="K21T1_Team3Model.USER">
+            <EntityTypeMapping TypeName="team13Model.USER">
               <MappingFragment StoreEntitySet="USER">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -703,13 +1014,14 @@
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="WARDs">
-            <EntityTypeMapping TypeName="K21T1_Team3Model.WARD">
+            <EntityTypeMapping TypeName="team13Model.WARD">
               <MappingFragment StoreEntitySet="WARD">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="WardName" ColumnName="WardName" />
@@ -734,7 +1046,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

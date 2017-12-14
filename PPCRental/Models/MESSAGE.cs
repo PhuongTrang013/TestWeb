@@ -12,13 +12,13 @@ namespace PPCRental.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PROPERTY_FEATURE
+    public partial class MESSAGE
     {
         public int ID { get; set; }
-        public Nullable<int> Property_ID { get; set; }
-        public Nullable<int> Feature_ID { get; set; }
-    
-        public virtual FEATURE FEATURE { get; set; }
-        public virtual PROPERTY PROPERTY { get; set; }
+        public string CName { get; set; }
+        public string CEmail { get; set; }
+        public string CPhone { get; set; }
+        public string CMess { get; set; }
+        public System.DateTime CCreate { get; set; }
     }
 }
