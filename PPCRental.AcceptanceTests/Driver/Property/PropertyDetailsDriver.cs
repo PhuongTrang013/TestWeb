@@ -24,7 +24,7 @@ namespace PPCRental.AcceptanceTests.Driver.Property
 
         public void InsertPropertyToDB(Table project)
         {
-            using (var db = new K21T1_Tteam13Entities())
+            using (var db = new K21T1_Team3Entities())
             {
                 foreach (var item in project.Rows)
                 {
@@ -65,7 +65,7 @@ namespace PPCRental.AcceptanceTests.Driver.Property
             //Act
             var actualProjectDetails = _result.Model<PROPERTY>();
 
-            var db = new K21T1_Tteam13Entities();
+            var db = new K21T1_Team3Entities();
 
             var property = expectedProjectDetails["PropertyName"].ToString();
             var content = expectedProjectDetails["Content"].ToString();

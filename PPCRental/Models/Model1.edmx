@@ -772,7 +772,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="team13Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="K21T1_Team3Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CONTACTs" EntityType="Self.CONTACT" />
           <EntitySet Name="DISTRICTs" EntityType="Self.DISTRICT" />
           <EntitySet Name="FEATUREs" EntityType="Self.FEATURE" />
@@ -851,7 +851,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="team13ModelStoreContainer" CdmEntityContainer="team13Entities">
+        <EntityContainerMapping StorageEntityContainer="team13ModelStoreContainer" CdmEntityContainer="K21T1_Team3Entities">
           <EntitySetMapping Name="CONTACTs">
             <EntityTypeMapping TypeName="team13Model.CONTACT">
               <MappingFragment StoreEntitySet="CONTACT">
