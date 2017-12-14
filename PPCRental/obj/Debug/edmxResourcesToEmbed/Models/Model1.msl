@@ -1,8 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="K21T1_Team3ModelStoreContainer" CdmEntityContainer="K21T1_Team3Entities">
+  <EntityContainerMapping StorageEntityContainer="team13ModelStoreContainer" CdmEntityContainer="team13Entities">
+    <EntitySetMapping Name="CONTACTs">
+      <EntityTypeMapping TypeName="team13Model.CONTACT">
+        <MappingFragment StoreEntitySet="CONTACT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Email_Contact" ColumnName="Email_Contact" />
+          <ScalarProperty Name="Phone_Contact" ColumnName="Phone_Contact" />
+          <ScalarProperty Name="Address_Contact" ColumnName="Address_Contact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="DISTRICTs">
-      <EntityTypeMapping TypeName="K21T1_Team3Model.DISTRICT">
+      <EntityTypeMapping TypeName="team13Model.DISTRICT">
         <MappingFragment StoreEntitySet="DISTRICT">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
@@ -11,16 +21,37 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="FEATUREs">
-      <EntityTypeMapping TypeName="K21T1_Team3Model.FEATURE">
+      <EntityTypeMapping TypeName="team13Model.FEATURE">
         <MappingFragment StoreEntitySet="FEATURE">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FeatureName" ColumnName="FeatureName" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGES">
+      <EntityTypeMapping TypeName="team13Model.IMAGE">
+        <MappingFragment StoreEntitySet="IMAGES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESSAGEs">
+      <EntityTypeMapping TypeName="team13Model.MESSAGE">
+        <MappingFragment StoreEntitySet="MESSAGE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="CEmail" ColumnName="CEmail" />
+          <ScalarProperty Name="CPhone" ColumnName="CPhone" />
+          <ScalarProperty Name="CMess" ColumnName="CMess" />
+          <ScalarProperty Name="CCreate" ColumnName="CCreate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PROJECT_STATUS">
-      <EntityTypeMapping TypeName="K21T1_Team3Model.PROJECT_STATUS">
+      <EntityTypeMapping TypeName="team13Model.PROJECT_STATUS">
         <MappingFragment StoreEntitySet="PROJECT_STATUS">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
@@ -29,7 +60,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PROPERTies">
-      <EntityTypeMapping TypeName="K21T1_Team3Model.PROPERTY">
+      <EntityTypeMapping TypeName="team13Model.PROPERTY">
         <MappingFragment StoreEntitySet="PROPERTY">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
@@ -57,7 +88,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PROPERTY_FEATURE">
-      <EntityTypeMapping TypeName="K21T1_Team3Model.PROPERTY_FEATURE">
+      <EntityTypeMapping TypeName="team13Model.PROPERTY_FEATURE">
         <MappingFragment StoreEntitySet="PROPERTY_FEATURE">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
@@ -65,18 +96,45 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PROPERTY_IMG">
+      <EntityTypeMapping TypeName="team13Model.PROPERTY_IMG">
+        <MappingFragment StoreEntitySet="PROPERTY_IMG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
+          <ScalarProperty Name="Img_ID" ColumnName="Img_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PROPERTY_TYPE">
-      <EntityTypeMapping TypeName="K21T1_Team3Model.PROPERTY_TYPE">
+      <EntityTypeMapping TypeName="team13Model.PROPERTY_TYPE">
         <MappingFragment StoreEntitySet="PROPERTY_TYPE">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="CodeType" ColumnName="CodeType" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLEs">
+      <EntityTypeMapping TypeName="team13Model.ROLE">
+        <MappingFragment StoreEntitySet="ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOCIALNETWORKs">
+      <EntityTypeMapping TypeName="team13Model.SOCIALNETWORK">
+        <MappingFragment StoreEntitySet="SOCIALNETWORK">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SocialNetworkName" ColumnName="SocialNetworkName" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="STREETs">
-      <EntityTypeMapping TypeName="K21T1_Team3Model.STREET">
+      <EntityTypeMapping TypeName="team13Model.STREET">
         <MappingFragment StoreEntitySet="STREET">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="StreetName" ColumnName="StreetName" />
@@ -85,8 +143,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="team13Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="USERs">
-      <EntityTypeMapping TypeName="K21T1_Team3Model.USER">
+      <EntityTypeMapping TypeName="team13Model.USER">
         <MappingFragment StoreEntitySet="USER">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -94,13 +163,14 @@
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="WARDs">
-      <EntityTypeMapping TypeName="K21T1_Team3Model.WARD">
+      <EntityTypeMapping TypeName="team13Model.WARD">
         <MappingFragment StoreEntitySet="WARD">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="WardName" ColumnName="WardName" />

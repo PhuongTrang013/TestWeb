@@ -13,7 +13,7 @@ namespace PPCRental.Controllers
         team13Entities db = new team13Entities();
         public ActionResult Index()
         {
-            var pro = db.PROPERTies.ToList().Where(x => x.Status_ID == 3);
+            var pro = db.PROPERTies.ToList();
             return View(pro);
         }
         public ActionResult Filter(string propname, int? PropertyType, int? bathroom, int? price, int? Quan_ID)

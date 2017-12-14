@@ -242,8 +242,13 @@ namespace PPCRental.Areas.Agency.Controllers
         public ActionResult Delete(int id)
         {
             PROPERTY prop = db.PROPERTies.Find(id);
-            PROPERTY_FEATURE pf = db.PROPERTY_FEATURE.SingleOrDefault(x => x.Property_ID == id);
-            db.PROPERTY_FEATURE.Remove(pf);
+            foreach (var fe in db.PROPERTY_FEATURE)
+            {
+                if (fe.Property_ID == id)
+                {
+                    db.PROPERTY_FEATURE.Remove(fe);
+                }
+            }
             db.PROPERTies.Remove(prop);
             db.SaveChanges();
             return RedirectToAction("IndexAgency");

@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="K21T1_Team3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="team13Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CONTACT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email_Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone_Contact" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address_Contact" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="DISTRICT">
     <Key>
       <PropertyRef Name="ID" />
@@ -18,7 +27,27 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FeatureName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="Boolean" />
+    <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="PROPERTY_FEATURE" Relationship="Self.FK_PROPERTY_FEATURE_FEATURE" FromRole="FEATURE" ToRole="PROPERTY_FEATURE" />
+  </EntityType>
+  <EntityType Name="IMAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImgName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PROPERTY_IMG" Relationship="Self.FK_PROPERTY_IMG_IMAGES" FromRole="IMAGES" ToRole="PROPERTY_IMG" />
+  </EntityType>
+  <EntityType Name="MESSAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CEmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CMess" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CCreate" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityType Name="PROJECT_STATUS">
     <Key>
@@ -58,6 +87,7 @@
     <NavigationProperty Name="DISTRICT" Relationship="Self.FK_PROPERTY_DISTRICT" FromRole="PROPERTY" ToRole="DISTRICT" />
     <NavigationProperty Name="PROJECT_STATUS" Relationship="Self.FK_PROPERTY_PROJECT_STATUS" FromRole="PROPERTY" ToRole="PROJECT_STATUS" />
     <NavigationProperty Name="PROPERTY_FEATURE" Relationship="Self.FK_PROPERTY_FEATURE_PROPERTY" FromRole="PROPERTY" ToRole="PROPERTY_FEATURE" />
+    <NavigationProperty Name="PROPERTY_IMG" Relationship="Self.FK_PROPERTY_IMG_PROPERTY" FromRole="PROPERTY" ToRole="PROPERTY_IMG" />
     <NavigationProperty Name="PROPERTY_TYPE" Relationship="Self.FK_PROPERTY_PROPERTY_TYPE" FromRole="PROPERTY" ToRole="PROPERTY_TYPE" />
     <NavigationProperty Name="STREET" Relationship="Self.FK_PROPERTY_STREET1" FromRole="PROPERTY" ToRole="STREET" />
     <NavigationProperty Name="USER" Relationship="Self.FK_PROPERTY_USER" FromRole="PROPERTY" ToRole="USER" />
@@ -74,6 +104,16 @@
     <NavigationProperty Name="FEATURE" Relationship="Self.FK_PROPERTY_FEATURE_FEATURE" FromRole="PROPERTY_FEATURE" ToRole="FEATURE" />
     <NavigationProperty Name="PROPERTY" Relationship="Self.FK_PROPERTY_FEATURE_PROPERTY" FromRole="PROPERTY_FEATURE" ToRole="PROPERTY" />
   </EntityType>
+  <EntityType Name="PROPERTY_IMG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Property_ID" Type="Int32" />
+    <Property Name="Img_ID" Type="Int32" />
+    <NavigationProperty Name="IMAGE" Relationship="Self.FK_PROPERTY_IMG_IMAGES" FromRole="PROPERTY_IMG" ToRole="IMAGES" />
+    <NavigationProperty Name="PROPERTY" Relationship="Self.FK_PROPERTY_IMG_PROPERTY" FromRole="PROPERTY_IMG" ToRole="PROPERTY" />
+  </EntityType>
   <EntityType Name="PROPERTY_TYPE">
     <Key>
       <PropertyRef Name="ID" />
@@ -82,7 +122,24 @@
     <Property Name="CodeType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="Boolean" />
+    <Property Name="TypeCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="PROPERTies" Relationship="Self.FK_PROPERTY_PROPERTY_TYPE" FromRole="PROPERTY_TYPE" ToRole="PROPERTY" />
+  </EntityType>
+  <EntityType Name="ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="USERs" Relationship="Self.FK_USER_ROLE" FromRole="ROLE" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="SOCIALNETWORK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SocialNetworkName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="STREET">
     <Key>
@@ -95,6 +152,16 @@
     <NavigationProperty Name="DISTRICT" Relationship="Self.FK_STREET_DISTRICT" FromRole="STREET" ToRole="DISTRICT" />
     <NavigationProperty Name="PROPERTies" Relationship="Self.FK_PROPERTY_STREET1" FromRole="STREET" ToRole="PROPERTY" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="USER">
     <Key>
       <PropertyRef Name="ID" />
@@ -105,10 +172,12 @@
     <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Role" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Role_ID" Type="Int32" />
     <Property Name="Status" Type="Boolean" />
+    <Property Name="UserCode" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="PROPERTies" Relationship="Self.FK_PROPERTY_USER" FromRole="USER" ToRole="PROPERTY" />
     <NavigationProperty Name="PROPERTies1" Relationship="Self.FK_PROPERTY_USER1" FromRole="USER" ToRole="PROPERTY" />
+    <NavigationProperty Name="ROLE" Relationship="Self.FK_USER_ROLE" FromRole="USER" ToRole="ROLE" />
   </EntityType>
   <EntityType Name="WARD">
     <Key>
@@ -169,6 +238,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PROPERTY_IMG_IMAGES">
+    <End Role="IMAGES" Type="Self.IMAGE" Multiplicity="0..1" />
+    <End Role="PROPERTY_IMG" Type="Self.PROPERTY_IMG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMAGES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PROPERTY_IMG">
+        <PropertyRef Name="Img_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_PROPERTY_PROJECT_STATUS">
     <End Role="PROJECT_STATUS" Type="Self.PROJECT_STATUS" Multiplicity="0..1" />
     <End Role="PROPERTY" Type="Self.PROPERTY" Multiplicity="*" />
@@ -189,6 +270,18 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="PROPERTY_FEATURE">
+        <PropertyRef Name="Property_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPERTY_IMG_PROPERTY">
+    <End Role="PROPERTY" Type="Self.PROPERTY" Multiplicity="0..1" />
+    <End Role="PROPERTY_IMG" Type="Self.PROPERTY_IMG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROPERTY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PROPERTY_IMG">
         <PropertyRef Name="Property_ID" />
       </Dependent>
     </ReferentialConstraint>
@@ -253,14 +346,33 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="K21T1_Team3Entities" annotation:LazyLoadingEnabled="true">
+  <Association Name="FK_USER_ROLE">
+    <End Role="ROLE" Type="Self.ROLE" Multiplicity="0..1" />
+    <End Role="USER" Type="Self.USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="team13Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CONTACTs" EntityType="Self.CONTACT" />
     <EntitySet Name="DISTRICTs" EntityType="Self.DISTRICT" />
     <EntitySet Name="FEATUREs" EntityType="Self.FEATURE" />
+    <EntitySet Name="IMAGES" EntityType="Self.IMAGE" />
+    <EntitySet Name="MESSAGEs" EntityType="Self.MESSAGE" />
     <EntitySet Name="PROJECT_STATUS" EntityType="Self.PROJECT_STATUS" />
     <EntitySet Name="PROPERTies" EntityType="Self.PROPERTY" />
     <EntitySet Name="PROPERTY_FEATURE" EntityType="Self.PROPERTY_FEATURE" />
+    <EntitySet Name="PROPERTY_IMG" EntityType="Self.PROPERTY_IMG" />
     <EntitySet Name="PROPERTY_TYPE" EntityType="Self.PROPERTY_TYPE" />
+    <EntitySet Name="ROLEs" EntityType="Self.ROLE" />
+    <EntitySet Name="SOCIALNETWORKs" EntityType="Self.SOCIALNETWORK" />
     <EntitySet Name="STREETs" EntityType="Self.STREET" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="USERs" EntityType="Self.USER" />
     <EntitySet Name="WARDs" EntityType="Self.WARD" />
     <AssociationSet Name="FK_PROPERTY_DISTRICT" Association="Self.FK_PROPERTY_DISTRICT">
@@ -279,6 +391,10 @@
       <End Role="FEATURE" EntitySet="FEATUREs" />
       <End Role="PROPERTY_FEATURE" EntitySet="PROPERTY_FEATURE" />
     </AssociationSet>
+    <AssociationSet Name="FK_PROPERTY_IMG_IMAGES" Association="Self.FK_PROPERTY_IMG_IMAGES">
+      <End Role="IMAGES" EntitySet="IMAGES" />
+      <End Role="PROPERTY_IMG" EntitySet="PROPERTY_IMG" />
+    </AssociationSet>
     <AssociationSet Name="FK_PROPERTY_PROJECT_STATUS" Association="Self.FK_PROPERTY_PROJECT_STATUS">
       <End Role="PROJECT_STATUS" EntitySet="PROJECT_STATUS" />
       <End Role="PROPERTY" EntitySet="PROPERTies" />
@@ -286,6 +402,10 @@
     <AssociationSet Name="FK_PROPERTY_FEATURE_PROPERTY" Association="Self.FK_PROPERTY_FEATURE_PROPERTY">
       <End Role="PROPERTY" EntitySet="PROPERTies" />
       <End Role="PROPERTY_FEATURE" EntitySet="PROPERTY_FEATURE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPERTY_IMG_PROPERTY" Association="Self.FK_PROPERTY_IMG_PROPERTY">
+      <End Role="PROPERTY" EntitySet="PROPERTies" />
+      <End Role="PROPERTY_IMG" EntitySet="PROPERTY_IMG" />
     </AssociationSet>
     <AssociationSet Name="FK_PROPERTY_PROPERTY_TYPE" Association="Self.FK_PROPERTY_PROPERTY_TYPE">
       <End Role="PROPERTY_TYPE" EntitySet="PROPERTY_TYPE" />
@@ -306,6 +426,10 @@
     <AssociationSet Name="FK_PROPERTY_WARD" Association="Self.FK_PROPERTY_WARD">
       <End Role="WARD" EntitySet="WARDs" />
       <End Role="PROPERTY" EntitySet="PROPERTies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_ROLE" Association="Self.FK_USER_ROLE">
+      <End Role="ROLE" EntitySet="ROLEs" />
+      <End Role="USER" EntitySet="USERs" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
