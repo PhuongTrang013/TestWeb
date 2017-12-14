@@ -1,0 +1,6 @@
+D:\cs new\ComputerScience\PPCRental.UnitTestss\bin\Debug\PPCRental.UnitTestss.dll
+D:\cs new\ComputerScience\PPCRental.UnitTestss\bin\Debug\PPCRental.UnitTestss.pdb
+D:\cs new\ComputerScience\PPCRental.UnitTestss\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\cs new\ComputerScience\PPCRental.UnitTestss\obj\Debug\PPCRental.UnitTestss.csprojResolveAssemblyReference.cache
+D:\cs new\ComputerScience\PPCRental.UnitTestss\obj\Debug\PPCRental.UnitTestss.dll
+D:\cs new\ComputerScience\PPCRental.UnitTestss\obj\Debug\PPCRental.UnitTestss.pdb

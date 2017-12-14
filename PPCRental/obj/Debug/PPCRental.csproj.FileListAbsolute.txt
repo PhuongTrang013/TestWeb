@@ -299,3 +299,26 @@ C:\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.
 C:\ComputerScience\PPCRental\obj\Debug\PPCRental.csproj.CoreCompileInputs.cache
 C:\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
 C:\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
+D:\cs new\ComputerScience\PPCRental\bin\PPCRental.dll.config
+D:\cs new\ComputerScience\PPCRental\bin\PPCRental.dll
+D:\cs new\ComputerScience\PPCRental\bin\PPCRental.pdb
+D:\cs new\ComputerScience\PPCRental\bin\EntityFramework.dll
+D:\cs new\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
+D:\cs new\ComputerScience\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.Razor.dll
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
+D:\cs new\ComputerScience\PPCRental\bin\EntityFramework.xml
+D:\cs new\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.Razor.xml
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
+D:\cs new\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
+D:\cs new\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+D:\cs new\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
+D:\cs new\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb

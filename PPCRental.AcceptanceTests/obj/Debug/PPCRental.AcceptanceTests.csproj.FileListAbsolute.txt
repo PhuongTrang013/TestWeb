@@ -1,0 +1,5 @@
+D:\cs new\ComputerScience\PPCRental.AcceptanceTests\bin\Debug\PPCRental.AcceptanceTests.dll
+D:\cs new\ComputerScience\PPCRental.AcceptanceTests\bin\Debug\PPCRental.AcceptanceTests.pdb
+D:\cs new\ComputerScience\PPCRental.AcceptanceTests\obj\Debug\PPCRental.AcceptanceTests.csprojResolveAssemblyReference.cache
+D:\cs new\ComputerScience\PPCRental.AcceptanceTests\obj\Debug\PPCRental.AcceptanceTests.dll
+D:\cs new\ComputerScience\PPCRental.AcceptanceTests\obj\Debug\PPCRental.AcceptanceTests.pdb

@@ -1,0 +1,4 @@
+D:\cs new\ComputerScience\PPCRental.UITests.Selenium\bin\Debug\PPCRental.UITests.Selenium.dll
+D:\cs new\ComputerScience\PPCRental.UITests.Selenium\bin\Debug\PPCRental.UITests.Selenium.pdb
+D:\cs new\ComputerScience\PPCRental.UITests.Selenium\obj\Debug\PPCRental.UITests.Selenium.dll
+D:\cs new\ComputerScience\PPCRental.UITests.Selenium\obj\Debug\PPCRental.UITests.Selenium.pdb
