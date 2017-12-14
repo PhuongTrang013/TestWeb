@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<PPCRental.Models.PROPERTY>
 @using PPCRental.Models;
 @{
-    team13Entities db = new team13Entities();
-    List<PROPERTY_TYPE> prop = new List<PROPERTY_TYPE>();
+    K21T1_Team13Entities db = new K21T1_Team13Entities();
+    List<PROPERTY_TYPE>
+        prop = new List<PROPERTY_TYPE>
+            ();
     prop = db.PROPERTY_TYPE.ToList();
 }
 <div class="main">
@@ -103,11 +105,11 @@
                                         <img class="img-responsive img-last" src="~/Images/nha1.2.jpg" alt="">
                                     </div>
                                     <div class="list-img-banner">Mới</div>
-                                    <div class="content-project">
-                                        <h3 style="color:black">@item.PropertyName<br />@item.DISTRICT.DistrictName</h3>
-                                        <p style="color:black">@item.Price @item.UnitPrice<br />@item.PROPERTY_TYPE.Description</p>
+                                    <div class="content-project" style="color:black">
+                                        <h3>@item.PropertyName<br />@item.DISTRICT.DistrictName</h3>
+                                        <p>@item.Price @item.UnitPrice<br />@item.PROPERTY_TYPE.Description</p>
                                     </div>
-                                </a> 
+                                </a>
                             </div>
                             count++;
                             if (count >= 6)
@@ -116,7 +118,7 @@
                             }
                         }
                     }
-                    <a class="button-all-sale" href="~/ViewListOfProject/ViewListOfProjectUser">Xem Thêm</a>
+                    <a class="button-all-sale" href="">Xem Thêm</a>
                 </div>
             </section>
         </div>
@@ -143,60 +145,6 @@
 
                     </a>
                 }
-                @*<a href="">
-                        <div class="col-md-4 md4-img">
-                            <img src="~/Images/big4.jpg" alt="">
-                            <div class="nenmo"></div>
-                            <div class="inner-md4-img">
-                                <div class="chuto">Chưng cư</div>
-                                <div class="chunho"></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="col-md-4 md4-img">
-                            <img src="~/Images/big3.jpg" alt="">
-                            <div class="nenmo"></div>
-                            <div class="inner-md4-img">
-                                <div class="chuto">Villa</div>
-                                <div class="chunho"></div>
-                            </div>
-                        </div>
-                    </a>*@
-                @*
-                    </div>
-                    <div class="row row-collections">
-                *@
-                @*<a href="">
-                        <div class="col-md-4 md4-img">
-                            <img src="~/Images/big5.jpg" alt="">
-                            <div class="nenmo"></div>
-                            <div class="inner-md4-img">
-                                <div class="chuto">Khu đô thị</div>
-                                <div class="chunho"></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="col-md-4 md4-img">
-                            <img src="~/Images/big6.jpg" alt="">
-                            <div class="nenmo"></div>
-                            <div class="inner-md4-img">
-                                <div class="chuto">Nhà sân vườn</div>
-                                <div class="chunho"></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="col-md-4 md4-img">
-                            <img src="~/Images/big7.jpg" alt="">
-                            <div class="nenmo"></div>
-                            <div class="inner-md4-img">
-                                <div class="chuto">Khách sạn</div>
-                                <div class="chunho"></div>
-                            </div>
-                        </div>
-                    </a>*@
             </div>
         </section>
     </div>
@@ -257,4 +205,5 @@
     <script>
         $('#Quan_ID').select2();
     </script>
+
 }

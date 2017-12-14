@@ -30,7 +30,7 @@ namespace PPCRental.UITests.Selenium.Support
             //Start web server to deploy and run app
             StartIisExpress();
 
-            Browser = Browsers.Chrome;
+            Browser = Browsers.Firefox;
 
             Trace("Selenium started");
         }

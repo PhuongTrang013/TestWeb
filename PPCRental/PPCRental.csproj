@@ -22,8 +22,6 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <Use64BitIISExpress />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,10 +49,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -102,13 +96,10 @@
       <HintPath>..\packages\Selenium.WebDriver.3.8.0\lib\net45\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.3.8.0\lib\net45\WebDriver.Support.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Agency\Models\" />
+    <Folder Include="Views\Account\" />
     <Folder Include="Views\ViewAgency\" />
     <Folder Include="Views\ViewList\" />
   </ItemGroup>
@@ -126,12 +117,15 @@
     <Compile Include="Models\CONTACT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Details.cs" />
     <Compile Include="Models\DISTRICT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DistrictDetails.cs" />
     <Compile Include="Models\FEATURE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Features.cs" />
     <Compile Include="Models\IMAGE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -153,15 +147,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PartialClasses.cs" />
     <Compile Include="Models\PROJECT_STATUS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PROPERTY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PropertyMetadata.cs" />
     <Compile Include="Models\PROPERTY_FEATURE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Property_Feature_Details.cs" />
     <Compile Include="Models\PROPERTY_IMG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -177,39 +174,32 @@
     <Compile Include="Models\STREET.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\StreetDetails.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\USER.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserMetadata.cs" />
     <Compile Include="Models\WARD.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\WardDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap1.css" />
     <Content Include="Content\dataTables.bootstrap4.css" />
     <Content Include="Content\details.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\froala_editor.pkgd.min.css" />
-    <Content Include="Content\froala_style.min.css" />
     <Content Include="Content\login-style.css" />
     <Content Include="Content\post.css" />
     <Content Include="Content\sb-admin.css" />
-    <Content Include="Content\select2.css" />
     <Content Include="Content\select2.min.css" />
-    <Content Include="Content\style.bundle.css" />
     <Content Include="Content\StyleSheet1.css" />
-    <Content Include="Content\StyleSheet2.css" />
-    <Content Include="Content\vendors.bundle.css" />
-    <Content Include="fonts\favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Images\112759117.jpg" />
     <Content Include="Images\bgroundlist.jpg" />
-    <Content Include="Images\favicon.ico" />
-    <Content Include="Images\hom.jpg" />
-    <Content Include="Images\home-bg.jpg" />
     <Content Include="Images\pic01.jpg" />
     <Content Include="Images\pic02.jpg" />
     <Content Include="Images\pic03.jpg" />
@@ -284,18 +274,17 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\login.js" />
     <Content Include="Scripts\sb-admin-datatables.min.js" />
     <Content Include="Scripts\sb-admin.min.js" />
-    <Content Include="Scripts\scripts.bundle.js" />
     <Content Include="Scripts\select2.min.js" />
-    <Content Include="Scripts\vendors.bundle.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -342,10 +331,6 @@
     <Content Include="Scripts\ppc.js" />
     <Content Include="Images\home.png" />
     <Content Include="Views\Home\Filter.cshtml" />
-    <Content Include="Views\Account\Index.cshtml" />
-    <Content Include="Views\Shared\AccountLogin.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -367,6 +352,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -398,13 +386,4 @@
   </ProjectExtensions>
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.Firefox.WebDriver.0.19.1\build\Selenium.Firefox.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Firefox.WebDriver.0.19.1\build\Selenium.Firefox.WebDriver.targets'))" />
-  </Target>
-  <Import Project="..\packages\Selenium.Firefox.WebDriver.0.19.1\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.19.1\build\Selenium.Firefox.WebDriver.targets')" />
 </Project>

@@ -10,36 +10,41 @@ namespace PPCRental.Areas.Agency.Controllers
 {
     public class PropertyAgencyController : Controller
     {
-        team13Entities db = new team13Entities();
+        K21T1_Tteam13Entities db = new K21T1_Tteam13Entities();
         // GET: Admin/ProductAdmin
         public ActionResult IndexAgency()
         {
-            var us = db.PROPERTies.Find(int.Parse(Session["UserID"].ToString()));
-            //var product
-            //if (us.USER.Role == "1")
-            //{
-                var product = db.PROPERTies.ToList().Where(x => x.Status_ID == 1 || x.Status_ID == 3).OrderByDescending(x => x.ID);
-            //}
-            
+            var product = db.PROPERTies.OrderByDescending(x => x.ID).ToList();
             return View(product);
         }
 
-        //[HttpPost]
-        //public ActionResult Edit(int id, PROPERTY pty, )
-        //{
-        //    var product = db.PROPERTies.SingleOrDefault(x => x.ID == id);
-        //    product.PropertyName = pty.PropertyName;
-        //    product.Images = pty.Images;
-        //    product.Price = pty.Price;
-        //    product.UnitPrice = pty.UnitPrice;
-        //    product.District_ID = pty.District_ID;
-        //    product.PROPERTY_TYPE = pty.PROPERTY_TYPE;
-        //    product.Street_ID = pty.Street_ID;
-        //    product.Ward_ID = pty.Ward_ID;
-        //    db.PROPERTies.Add(product);
-        //    db.SaveChanges();
-        //    return RedirectToAction("IndexAgency");
-        //}
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var product = db.PROPERTies.SingleOrDefault(x => x.ID == id);
+            ViewBag.PROPERTY_TYPE = db.PROPERTies.OrderByDescending(x => x.ID).ToList();
+            ViewBag.Street_ID = db.PROPERTies.OrderByDescending(x => x.ID).ToList();
+            ViewBag.Ward_ID = db.PROPERTies.OrderByDescending(x => x.ID).ToList();
+            ViewBag.District_ID = db.PROPERTies.OrderByDescending(x => x.ID).ToList();
+            return View(product);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, PROPERTY pty)
+        {
+            var product = db.PROPERTies.SingleOrDefault(x => x.ID == id);
+            product.PropertyName = pty.PropertyName;
+            product.Images = pty.Images;
+            product.Price = pty.Price;
+            product.UnitPrice = pty.UnitPrice;
+            product.District_ID = pty.District_ID;
+            product.PROPERTY_TYPE = pty.PROPERTY_TYPE;
+            product.Street_ID = pty.Street_ID;
+            product.Ward_ID = pty.Ward_ID;
+            db.PROPERTies.Add(product);
+            db.SaveChanges();
+            return RedirectToAction("IndexAgency");
+        }
         public JsonResult GetStreet(int District_id)
         {
             return Json(
@@ -60,40 +65,19 @@ namespace PPCRental.Areas.Agency.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult Create(PROPERTY prop, HttpPostedFileBase Avatar, List<HttpPostedFileBase> Image, List<int> chkfeature)//?
+        public ActionResult Create(PROPERTY prop, HttpPostedFileBase Avatar, List<int> chkfeature)//?
         {
-            string path1 = "";
             if (Avatar != null)
             {
                 string ava = "";
                 if (Avatar.ContentLength > 0)
                 {
                     var filename = Path.GetFileName(Avatar.FileName);
-                    path1 = Path.Combine(Server.MapPath("/Images/"), filename);
-                    Avatar.SaveAs(path1);
+                    var path = Path.Combine(Server.MapPath("/Images/"), filename);
+                    Avatar.SaveAs(path);
                     ava = filename;
                 }
                 prop.Avatar = ava;
-            }
-
-            string path2 = "";
-            foreach (var item in Image)
-            {
-                if (item != null)
-                {
-                    try
-                    {
-                        var filename2 = Path.GetFileName(item.FileName);
-                        path2 = Path.Combine(Server.MapPath("~/Images/"), filename2);
-                        item.SaveAs(path2);
-                        prop.Images += filename2 + ",";
-                    }
-                    catch
-                    {
-                        ViewBag.mgs = "error";
-                        return View("IndexAgency");
-                    }
-                }
             }
 
             foreach (int fe in chkfeature)
@@ -112,40 +96,19 @@ namespace PPCRental.Areas.Agency.Controllers
             return RedirectToAction("IndexAgency");
         }
         [HttpPost]
-        public ActionResult SaveDraft(PROPERTY prop, HttpPostedFileBase Avatar, List<HttpPostedFileBase> Image, List<int> chkfeature)//?
+        public ActionResult SaveDraft(PROPERTY prop, HttpPostedFileBase Avatar, List<int> chkfeature)//?
         {
-            string path1 = "";
             if (Avatar != null)
             {
                 string ava = "";
                 if (Avatar.ContentLength > 0)
                 {
                     var filename = Path.GetFileName(Avatar.FileName);
-                    path1 = Path.Combine(Server.MapPath("/Images/"), filename);
-                    Avatar.SaveAs(path1);
+                    var path = Path.Combine(Server.MapPath("/Images/"), filename);
+                    Avatar.SaveAs(path);
                     ava = filename;
                 }
                 prop.Avatar = ava;
-            }
-
-            string path2 = "";
-            foreach (var item in Image)
-            {
-                if (item != null)
-                {
-                    try
-                    {
-                        var filename2 = Path.GetFileName(item.FileName);
-                        path2 = Path.Combine(Server.MapPath("~/Images/"), filename2);
-                        item.SaveAs(path2);
-                        prop.Images += filename2 + ",";
-                    }
-                    catch
-                    {
-                        ViewBag.mgs = "error";
-                        return View("IndexAgency");
-                    }
-                }
             }
 
             foreach (int fe in chkfeature)
@@ -164,52 +127,20 @@ namespace PPCRental.Areas.Agency.Controllers
             return RedirectToAction("IndexAgency");
         }
 
-        [HttpGet]
-        public ActionResult Edit(int id)
-        {
-            PROPERTY prop = db.PROPERTies.Find(id);
-            ViewBag.prop_type = db.PROPERTY_TYPE.ToList().OrderByDescending(x => x.ID);
-            ViewBag.prop_street = db.STREETs.ToList().OrderByDescending(x => x.ID);
-            ViewBag.prop_ward = db.WARDs.ToList().OrderByDescending(x => x.ID);
-            ViewBag.prop_district = db.DISTRICTs.ToList().OrderByDescending(x => x.ID);
-            return View(prop);
-        }
-
         [HttpPost]
-        public ActionResult Edit(PROPERTY prop, HttpPostedFileBase Avatar, List<HttpPostedFileBase> Image, List<int> chkfeature)//?
+        public ActionResult Edit(PROPERTY prop, HttpPostedFileBase Avatar, List<int> chkfeature)//?
         {
-            string path1 = "";
             if (Avatar != null)
             {
                 string ava = "";
                 if (Avatar.ContentLength > 0)
                 {
                     var filename = Path.GetFileName(Avatar.FileName);
-                    path1 = Path.Combine(Server.MapPath("/Images/"), filename);
-                    Avatar.SaveAs(path1);
+                    var path = Path.Combine(Server.MapPath("~/Images/"), filename);
+                    Avatar.SaveAs(path);
                     ava = filename;
                 }
                 prop.Avatar = ava;
-            }
-
-            string path2 = "";
-            foreach (var item in Image)
-            {
-                if (item != null)
-                {
-                    try
-                    {
-                        var filename2 = Path.GetFileName(item.FileName);
-                        path2 = Path.Combine(Server.MapPath("~/Images/"), filename2);
-                        item.SaveAs(path2);
-                        prop.Images += filename2 + ",";
-                    }
-                    catch
-                    {
-                        ViewBag.mgs = "error";
-                        return View("IndexAgency");
-                    }
-                }
             }
 
             foreach (int fe in chkfeature)
@@ -241,15 +172,16 @@ namespace PPCRental.Areas.Agency.Controllers
 
         public ActionResult Delete(int id)
         {
-            PROPERTY prop = db.PROPERTies.Find(id);
-            foreach (var fe in db.PROPERTY_FEATURE)
+            var product = db.PROPERTies.FirstOrDefault(x => x.ID == id);
+            List<PROPERTY_FEATURE> pf = new List<PROPERTY_FEATURE>();
+            foreach (var item in pf)
             {
-                if (fe.Property_ID == id)
+                if (item.Property_ID == id)
                 {
-                    db.PROPERTY_FEATURE.Remove(fe);
+                    
                 }
             }
-            db.PROPERTies.Remove(prop);
+            db.PROPERTies.Remove(product);
             db.SaveChanges();
             return RedirectToAction("IndexAgency");
         }
@@ -269,7 +201,7 @@ namespace PPCRental.Areas.Agency.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
-            var user = db.USERs.FirstOrDefault(x => x.Email.ToLower().Equals(email.ToLower()));
+            var user = db.USERs.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
             if (user != null)
             {
                 if (user.Password.Equals(password))
@@ -281,7 +213,7 @@ namespace PPCRental.Areas.Agency.Controllers
             }
             else
             {
-                return View();
+                ViewBag.mgs = "Tài khoản không tồn tại";
             }
             return View();
         }
@@ -294,32 +226,6 @@ namespace PPCRental.Areas.Agency.Controllers
                 Session["UserID"] = null;
             }
             return RedirectToAction("Login");
-        }
-        [HttpPost]
-        public ActionResult Register(string fullname, string email, string address, string phone, string password, string rpassword)
-        {
-            var user = db.USERs.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
-            if (user == null)
-            {
-                if (password.Equals(rpassword))
-                {
-                    USER us = new USER();
-                    us.Email = email;
-                    us.Address = address;
-                    us.Phone = phone;
-                    us.Password = password;
-                    db.USERs.Add(us);
-                    db.SaveChanges();
-                    Session["Fullname"] = us.FullName;
-                    Session["UserID"] = us.ID;
-                    return RedirectToAction("IndexAgency");
-                }
-            }
-            else
-            {
-                ViewBag.mgs = "Tài khoản đã tồn tại";
-            }
-            return View("Login");
         }
     }
 }

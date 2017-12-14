@@ -358,7 +358,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="team13Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="K21T1_Tteam13Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CONTACTs" EntityType="Self.CONTACT" />
     <EntitySet Name="DISTRICTs" EntityType="Self.DISTRICT" />
     <EntitySet Name="FEATUREs" EntityType="Self.FEATURE" />

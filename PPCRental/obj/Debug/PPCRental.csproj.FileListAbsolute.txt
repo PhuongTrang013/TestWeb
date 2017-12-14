@@ -202,123 +202,94 @@ C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Depl
 C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.xml
 C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Razor.xml
 C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\System.Web.Mvc.xml
-C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
 C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.dll
 C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.pdb
-D:\test\VLUA\VLUA\PPCRental\bin\PPCRental.dll.config
-D:\test\VLUA\VLUA\PPCRental\bin\PPCRental.dll
-D:\test\VLUA\VLUA\PPCRental\bin\PPCRental.pdb
-D:\test\VLUA\VLUA\PPCRental\bin\EntityFramework.dll
-D:\test\VLUA\VLUA\PPCRental\bin\EntityFramework.SqlServer.dll
-D:\test\VLUA\VLUA\PPCRental\bin\Microsoft.Web.Infrastructure.dll
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.Helpers.dll
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.Mvc.dll
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.Razor.dll
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.dll
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.dll
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Razor.dll
-D:\test\VLUA\VLUA\PPCRental\bin\EntityFramework.xml
-D:\test\VLUA\VLUA\PPCRental\bin\EntityFramework.SqlServer.xml
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.Razor.xml
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.Helpers.xml
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.xml
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.xml
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.WebPages.Razor.xml
-D:\test\VLUA\VLUA\PPCRental\bin\System.Web.Mvc.xml
-D:\test\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
-D:\test\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.csproj.CoreCompileInputs.cache
-D:\test\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.dll
-D:\test\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.pdb
-D:\test\VLUA\PPC\PPCRental\bin\PPCRental.dll.config
-D:\test\VLUA\PPC\PPCRental\bin\PPCRental.dll
-D:\test\VLUA\PPC\PPCRental\bin\PPCRental.pdb
-D:\test\VLUA\PPC\PPCRental\bin\EntityFramework.dll
-D:\test\VLUA\PPC\PPCRental\bin\EntityFramework.SqlServer.dll
-D:\test\VLUA\PPC\PPCRental\bin\Microsoft.Web.Infrastructure.dll
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.Helpers.dll
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.Mvc.dll
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.Razor.dll
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.WebPages.Deployment.dll
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.WebPages.dll
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.WebPages.Razor.dll
-D:\test\VLUA\PPC\PPCRental\bin\EntityFramework.xml
-D:\test\VLUA\PPC\PPCRental\bin\EntityFramework.SqlServer.xml
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.Razor.xml
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.Helpers.xml
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.WebPages.Deployment.xml
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.WebPages.xml
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.WebPages.Razor.xml
-D:\test\VLUA\PPC\PPCRental\bin\System.Web.Mvc.xml
-D:\test\VLUA\PPC\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
-D:\test\VLUA\PPC\PPCRental\obj\Debug\PPCRental.csproj.CoreCompileInputs.cache
-D:\test\VLUA\PPC\PPCRental\obj\Debug\PPCRental.dll
-D:\test\VLUA\PPC\PPCRental\obj\Debug\PPCRental.pdb
-D:\VLU\ComputerScience\PPCRental\bin\PPCRental.dll.config
-D:\VLU\ComputerScience\PPCRental\bin\PPCRental.dll
-D:\VLU\ComputerScience\PPCRental\bin\PPCRental.pdb
-D:\VLU\ComputerScience\PPCRental\bin\EntityFramework.dll
-D:\VLU\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.Razor.dll
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
-D:\VLU\ComputerScience\PPCRental\bin\EntityFramework.xml
-D:\VLU\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.Razor.xml
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
-D:\VLU\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
-D:\VLU\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
-D:\VLU\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
-D:\VLU\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
-C:\ComputerScience\PPCRental\bin\PPCRental.dll.config
-C:\ComputerScience\PPCRental\bin\PPCRental.dll
-C:\ComputerScience\PPCRental\bin\PPCRental.pdb
-C:\ComputerScience\PPCRental\bin\EntityFramework.dll
-C:\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
-C:\ComputerScience\PPCRental\bin\Microsoft.Web.Infrastructure.dll
-C:\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
-C:\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
-C:\ComputerScience\PPCRental\bin\System.Web.Razor.dll
-C:\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
-C:\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
-C:\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
-C:\ComputerScience\PPCRental\bin\EntityFramework.xml
-C:\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
-C:\ComputerScience\PPCRental\bin\System.Web.Razor.xml
-C:\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
-C:\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
-C:\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
-C:\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
-C:\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
-C:\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
-C:\ComputerScience\PPCRental\obj\Debug\PPCRental.csproj.CoreCompileInputs.cache
-C:\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
-C:\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
-D:\cs new\ComputerScience\PPCRental\bin\PPCRental.dll.config
-D:\cs new\ComputerScience\PPCRental\bin\PPCRental.dll
-D:\cs new\ComputerScience\PPCRental\bin\PPCRental.pdb
-D:\cs new\ComputerScience\PPCRental\bin\EntityFramework.dll
-D:\cs new\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.dll
-D:\cs new\ComputerScience\PPCRental\bin\Microsoft.Web.Infrastructure.dll
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.Helpers.dll
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.Mvc.dll
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.Razor.dll
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.dll
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.dll
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.dll
-D:\cs new\ComputerScience\PPCRental\bin\EntityFramework.xml
-D:\cs new\ComputerScience\PPCRental\bin\EntityFramework.SqlServer.xml
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.Razor.xml
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.Helpers.xml
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.Deployment.xml
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.xml
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.WebPages.Razor.xml
-D:\cs new\ComputerScience\PPCRental\bin\System.Web.Mvc.xml
-D:\cs new\ComputerScience\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
-D:\cs new\ComputerScience\PPCRental\obj\Debug\PPCRental.dll
-D:\cs new\ComputerScience\PPCRental\obj\Debug\PPCRental.pdb
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\Newtonsoft.Json.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\TechTalk.SpecFlow.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\WebDriver.dll
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\Newtonsoft.Json.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\bin\WebDriver.xml
+C:\Users\Nam\Desktop\New folder\VLUA\VLUA\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache
+D:\Temp\VLUA\PPCRental\bin\PPCRental.dll.config
+D:\Temp\VLUA\PPCRental\bin\PPCRental.dll
+D:\Temp\VLUA\PPCRental\bin\PPCRental.pdb
+D:\Temp\VLUA\PPCRental\bin\EntityFramework.dll
+D:\Temp\VLUA\PPCRental\bin\EntityFramework.SqlServer.dll
+D:\Temp\VLUA\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+D:\Temp\VLUA\PPCRental\bin\Newtonsoft.Json.dll
+D:\Temp\VLUA\PPCRental\bin\System.Web.Helpers.dll
+D:\Temp\VLUA\PPCRental\bin\System.Web.Mvc.dll
+D:\Temp\VLUA\PPCRental\bin\System.Web.Razor.dll
+D:\Temp\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.dll
+D:\Temp\VLUA\PPCRental\bin\System.Web.WebPages.dll
+D:\Temp\VLUA\PPCRental\bin\System.Web.WebPages.Razor.dll
+D:\Temp\VLUA\PPCRental\bin\TechTalk.SpecFlow.dll
+D:\Temp\VLUA\PPCRental\bin\WebDriver.dll
+D:\Temp\VLUA\PPCRental\bin\EntityFramework.xml
+D:\Temp\VLUA\PPCRental\bin\EntityFramework.SqlServer.xml
+D:\Temp\VLUA\PPCRental\bin\Newtonsoft.Json.xml
+D:\Temp\VLUA\PPCRental\bin\System.Web.Razor.xml
+D:\Temp\VLUA\PPCRental\bin\System.Web.Helpers.xml
+D:\Temp\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.xml
+D:\Temp\VLUA\PPCRental\bin\System.Web.WebPages.xml
+D:\Temp\VLUA\PPCRental\bin\System.Web.WebPages.Razor.xml
+D:\Temp\VLUA\PPCRental\bin\System.Web.Mvc.xml
+D:\Temp\VLUA\PPCRental\bin\WebDriver.xml
+D:\Temp\VLUA\PPCRental\obj\Debug\PPCRental.csproj.CoreCompileInputs.cache
+D:\Temp\VLUA\PPCRental\obj\Debug\PPCRental.dll
+D:\Temp\VLUA\PPCRental\obj\Debug\PPCRental.pdb
+D:\VLUA_updated\VLUA\PPCRental\bin\PPCRental.dll.config
+D:\VLUA_updated\VLUA\PPCRental\bin\PPCRental.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\PPCRental.pdb
+D:\VLUA_updated\VLUA\PPCRental\bin\EntityFramework.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\EntityFramework.SqlServer.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\Newtonsoft.Json.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.Helpers.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.Mvc.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.Razor.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.Razor.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\TechTalk.SpecFlow.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\WebDriver.dll
+D:\VLUA_updated\VLUA\PPCRental\bin\EntityFramework.xml
+D:\VLUA_updated\VLUA\PPCRental\bin\EntityFramework.SqlServer.xml
+D:\VLUA_updated\VLUA\PPCRental\bin\Newtonsoft.Json.xml
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.Razor.xml
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.Helpers.xml
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.xml
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.xml
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.Razor.xml
+D:\VLUA_updated\VLUA\PPCRental\bin\System.Web.Mvc.xml
+D:\VLUA_updated\VLUA\PPCRental\bin\WebDriver.xml
+D:\VLUA_updated\VLUA\PPCRental\obj\Debug\PPCRental.dll
+D:\VLUA_updated\VLUA\PPCRental\obj\Debug\PPCRental.pdb
+D:\3\VLUA_updated\VLUA\PPCRental\bin\PPCRental.dll.config
+D:\3\VLUA_updated\VLUA\PPCRental\bin\PPCRental.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\PPCRental.pdb
+D:\3\VLUA_updated\VLUA\PPCRental\bin\EntityFramework.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\EntityFramework.SqlServer.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\Microsoft.Web.Infrastructure.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\Newtonsoft.Json.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.Helpers.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.Mvc.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.Razor.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.Razor.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\TechTalk.SpecFlow.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\WebDriver.dll
+D:\3\VLUA_updated\VLUA\PPCRental\bin\EntityFramework.xml
+D:\3\VLUA_updated\VLUA\PPCRental\bin\EntityFramework.SqlServer.xml
+D:\3\VLUA_updated\VLUA\PPCRental\bin\Newtonsoft.Json.xml
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.Razor.xml
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.Helpers.xml
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.Deployment.xml
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.xml
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.WebPages.Razor.xml
+D:\3\VLUA_updated\VLUA\PPCRental\bin\System.Web.Mvc.xml
+D:\3\VLUA_updated\VLUA\PPCRental\bin\WebDriver.xml
+D:\3\VLUA_updated\VLUA\PPCRental\obj\Debug\PPCRental.dll
+D:\3\VLUA_updated\VLUA\PPCRental\obj\Debug\PPCRental.pdb
+D:\3\VLUA_updated\VLUA\PPCRental\obj\Debug\PPCRental.csprojResolveAssemblyReference.cache

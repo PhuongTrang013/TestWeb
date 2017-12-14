@@ -31,7 +31,7 @@
                     <p class="label">Ảnh đại diện</p>
                 </td>
                 <td>
-                    <input type="file" name="Avatar" accept="image/*"/>
+                    <input type="file" name="Avatar" />
                 </td>
             </tr>
             <tr>
@@ -39,7 +39,7 @@
                     <p class="label">Ảnh dự án</p>
                 </td>
                 <td>
-                    <input type="file" accept="image/*" name="Image" multiple>
+                    <input type="file" accept="image/*" name="image">
                 </td>
             </tr>
             <tr>
@@ -48,6 +48,14 @@
                 </td>
                 <td>
                     @Html.DropDownListFor(x => x.PropertyType_ID, new SelectList(db.PROPERTY_TYPE, "ID", "Description"), "Chọn loại dự án" , new { @class = "post-prototype" })
+                    @*<form>
+                            <select class="input" name="TypeOfProp">
+                                @foreach (var item in db.PROPERTY_TYPE)
+                                {
+                                    <option value="@item.ID">@item.Description</option>
+                                }
+                            </select>
+                        </form>*@
                 </td>
             </tr>
             <tr>
@@ -56,6 +64,18 @@
                 </td>
                 <td>
                     @Html.DropDownListFor(x => x.District_ID, new SelectList(db.DISTRICTs, "ID", "DistrictName"), "Chọn Quận" , new { @class = "input-district" })
+                    @*<form>
+                            <select class="input input-district" name="TypeOfProp">
+                                @foreach(var item in nguyen as List<DISTRICT>)
+                                {
+                                    <option value="@item.ID">@item.DistrictName</option>
+                                }
+                                @foreach (var item in db.DISTRICTs)
+                                {
+                                    <option value="@item.ID">@item.DistrictName</option>
+                                }
+                            </select>
+                        </form>*@
                 </td>
             </tr>
             <tr>
@@ -64,6 +84,14 @@
                 </td>
                 <td>
                     @Html.DropDownListFor(x => x.Ward_ID, new SelectList(db.WARDs, "ID", "WardName"), "Chọn Phường", new { @class = "input-ward" })
+                    @*<form>
+                            <select class="input" name="ward">
+                                @foreach (var item in db.WARDs)
+                                {
+                                    <option value="@item.ID">@item.WardName</option>
+                                }
+                            </select>
+                        </form>*@
                 </td>
             </tr>
             <tr>
@@ -72,6 +100,12 @@
                 </td>
                 <td>
                     @Html.DropDownListFor(x => x.Street_ID, new SelectList(db.STREETs, "ID", "StreetName"), "Chọn Đường", new { @class = "input-street" })
+                    @*<select class="input input-street" name="street">
+                            @foreach (var item in db.STREETs)
+                            {
+                                <option value="@item.ID">@item.StreetName</option>
+                            }
+                        </select>*@
                 </td>
             </tr>
             <tr>
@@ -191,13 +225,20 @@
                     </div>
                 </td>
             </tr>
+            @*<tr>
+                    <td>
+                        <p class="label">Mô tả nhanh dự án</p>
+                    </td>
+                    <td>
+                        <input class="input" type="text" name="des" placeholder="Nhập mô tả nhanh dự án">
+                    </td>
+                </tr>*@
             <tr>
                 <td>
                     <p class="label">Mô tả chi tiết dự án</p>
                 </td>
                 <td>
-                    @*<textarea rows="7" cols="41" name="detail" placeholder="Nhập mô tả chi tiết dự án" style="border-radius: 7px;">(x =></textarea>*@
-                    <input class="input" type="text" name="detail" />
+                    <textarea rows="7" cols="41" name="detail" placeholder="Nhập mô tả chi tiết dự án" style="border-radius: 7px;"></textarea>
                 </td>
             </tr>
         </table>
@@ -209,3 +250,17 @@
     </div>
 </div>
 }
+
+@*@section Scripts {
+    <script>
+        $('.input-district').select2();
+        $('#Duong').select2();
+        $('#Quan').on('change', function () {
+            $('#Duong').empty();
+            $.getJSON('Filter/GetStreet?did=' + $('#Quan').val(), function (json) {
+                $('#Duong').select2({ data: json });
+            });
+
+        });
+    </script>
+}*@

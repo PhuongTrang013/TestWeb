@@ -1,13 +1,16 @@
 ﻿@model PPCRental.Models.PROPERTY
 @using PPCRental.Models;
+@using System.Text.RegularExpressions;
 @{
     ViewBag.Title = "ViewDetailOfProject";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    K21T1_Team3Entities db = new K21T1_Team3Entities();
-    var result = db.PROPERTY_FEATURE.ToList().Where(s => s.Feature_ID == Model.ID);
+    var db = new K21T1_Team3Entities();
+    var feature = db.PROPERTY_FEATURE.ToList().Where(s => s.Property_ID == Model.ID);
+    //var imgID = db.PROPERTY_IMG.ToList().Where(x => x.Img_ID == Model.ID);
+    //var img = db.IMAGES.ToList();
+    var type = db.PROPERTies.ToList();
 }
 <link href="~/Content/details.css" rel="stylesheet" />
-
 <div class="container-fluid">
     <div class="row">
 
@@ -31,22 +34,34 @@
                                 <!-- start -->
                                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                     <!-- Indicators -->
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                                    </ol>
+                                    @*<ol class="carousel-indicators">
+                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                                        </ol>*@
 
                                     <!-- Wrapper for slides -->
                                     <div class="carousel-inner">
                                         @{
                                             var count = 0;
+
                                         }
-                                        @for (int i = 0; i < 10; i++)
+
+                                        @foreach (var item in Model.PROPERTY_IMG)
                                         {
-                                            <div class="item @(count++ > 0 ? null : "active")">
-                                                <img src="~/Images/@Model.Images" alt="Los Angeles" style="width:100%;">
-                                            </div>
+
+                                            string arrImg = (@item.IMAGE.ImgName).ToString();
+                                            string[] splitarr = arrImg.Split(',');
+                                            int dem = splitarr.Count();
+                                            string hinh = "";
+                                            for (int i = 0; i < dem; i++)
+                                            {
+                                                hinh = splitarr[i];
+                                                <div class="item @(count++ > 0 ? null : "active")">
+                                                    <img src="~/Images/@hinh" alt="Los Angeles" style="width:100%;height: 75vh;">
+                                                </div>
+                                            }
+
                                         }
 
                                         @*<div class="item">
@@ -111,7 +126,7 @@
                         @*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>*@
 
                         <h4><strong>The space</strong></h4>
-                        <p style="letter-spacing: 1px;">
+                        <p style="letter-spacing: 1px;text-align: justify;">
                             @Html.DisplayFor(model => model.Content)
                         </p>
 
@@ -145,10 +160,21 @@
         </div>
 
         <div class="col-md-4 right-content-md4" style="margin-top: 20px;">
-            <div class="col-md-12" style="border: thin solid;">
+            <div class="col-md-12" style="border: thin solid; box-shadow: 0px 2px 10px;">
                 <div class="content-book">
-                    <h2 class="col-md-4">Price:</h2>
-                    <h2 class="col-md-8">@Html.DisplayFor(model => model.Price)&nbsp;@Html.DisplayFor(model => model.UnitPrice)</h2>
+                    <div>
+                        <h3>
+                            <span>Property_Type:</span>
+                            <span>@Model.PROPERTY_TYPE.CodeType</span>
+                        </h3>
+                    </div>
+                    <hr>
+                    <h2>
+                        <span>Price:</span>
+                        <span>@Model.Price</span>
+                        <span>@Model.UnitPrice</span>
+                    </h2>
+                    @*<h2>@Html.DisplayFor(model => model.Price)&nbsp;@Html.DisplayFor(model => model.UnitPrice)</h2>*@
                     <hr>
                     <h4><strong>House Infomation</strong></h4>
                     <div class="col-md-12">
@@ -169,33 +195,21 @@
 
                                 @foreach (var item in db.FEATUREs)
                                 {
-                                    <li id="@item.ID" class="col-md-6"><i class="fa fa-product-hunt" aria-hidden="@item.Status"></i>&nbsp;@item.FeatureName</li>
+                                    <li id="@item.ID" class="col-md-6" style="opacity: 0.3"><i class="fa @item.Icon" aria-hidden="@item.Status"></i>&nbsp;@item.FeatureName</li>
                                 }
 
-                                @*<li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>
-                                    <li><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Bed&nbsp;Room</li>*@
                             </ul>
                         </div>
                     </div>
-                    <hr>
-                    @*<h4><strong>Price</strong></h4>
-                        <p>Cleaning Fee ₫2342459</p>
-                        <h5><strong>Always communicate through Airbnb</strong></h5>
-                        <p>To protect your payment, never transfer money or communicate outside of the Airbnb website or app.</p>
-                        <hr>*@
-                    <h4><strong>Safety features</strong></h4>
-                    <div class="safety">
-                        <ul class="safety-ul">
-                            <li>Smoke detector</li>
-                            <li>Fire extinguisher</li>
-                            <li>First aid kit</li>
-                        </ul>
-                    </div>
+                    @*<hr>
+                        <h4><strong>Safety features</strong></h4>
+                        <div class="safety">
+                            <ul class="safety-ul">
+                                <li>Smoke detector</li>
+                                <li>Fire extinguisher</li>
+                                <li>First aid kit</li>
+                            </ul>
+                        </div>*@
                     <hr>
                 </div>
             </div>
@@ -209,17 +223,17 @@
         <address class="lead">@Html.ValueFor(model => model.STREET.StreetName),&nbsp;Phường&nbsp;@Html.ValueFor(model => model.WARD.WardName),&nbsp;Quận&nbsp;@Html.ValueFor(model => model.DISTRICT.DistrictName),&nbsp;TP. Hồ Chí Minh.</address>
         <div id="googlemaps"></div>
         <script type="text/javascript">
-                    function GoogleMaps() {
-                        var vitri = { lat: 10.802006, lng: 106.592242 };
-                        var map = new google.maps.Map(document.getElementById('googlemaps'), {
-                            zoom: 12,
-                            center: vitri
-                        });
-                        var marker = new google.maps.Marker({
-                            position: vitri,
-                            map: map
-                        });
-                    }
+            function GoogleMaps() {
+                var vitri = { lat: 10.802006, lng: 106.592242 };
+                var map = new google.maps.Map(document.getElementById('googlemaps'), {
+                    zoom: 12,
+                    center: vitri
+                });
+                var marker = new google.maps.Marker({
+                    position: vitri,
+                    map: map
+                });
+            }
         </script>
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtTijdOrawSLXkwdTOT1MKXE7Y0-pVcFI&callback=GoogleMaps">
@@ -232,44 +246,39 @@
 <div class="container property-type-detail">
     <h2 class="h2-projectlq">Các dự án liên quan</h2>
     <div class="duanlienquan">
-        @{foreach (var item in db.PROPERTies)
+        @{foreach (var item in type)
             {
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail width-thumb">
-                        <img src="~/Images/@item.Images" alt="@item.Images">
-                        <div class="caption">
-                            <h3>@item.PropertyName</h3>
-                            <p class="content-property-type-detail">@item.Content</p>
-                            <p><a href="#" class="btn btn-primary" role="button">Mua</a> <a href="/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID" class="btn btn-default" role="button">Xem chi tiết</a></p>
-                        </div>
+                if (item.PropertyType_ID == Model.PropertyType_ID && item.ID != Model.ID)
+                {
+                    <div class="col-sm-6 col-md-4">
+                        <a class="none-decoration" href="/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID">
+                            <div class="thumbnail width-thumb" title="Click để xem chi tiết">
+                                <img src="~/Images/@item.Images" alt="@item.Images">
+                                <div class="caption text-justify">
+                                    <h3 class="tenduan">@item.PropertyName</h3>
+                                    <p class="content-property-type-detail">@item.Content</p>
+                                    <div class="content-project" style="color:black">
+                                        <h3 class="col-md-6">@item.DISTRICT.DistrictName<br />@item.Area</h3>
+                                        <p class="col-md-6">@item.PROPERTY_TYPE.Description<br />@item.Price @item.UnitPrice</p>
+                                    </div>
+                                    @*<p><a href="/ViewDetailOfProjectUser/ViewDetailOfProject/@item.ID" class="btn btn-default" role="button">Xem chi tiết</a></p>*@
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
+                }
+
             }
         }
     </div>
 </div>
 
 <div class="parallax-selector"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@{ foreach (var item2 in feature)
+    {
+        <script src="~/Scripts/jquery-3.2.1.js"></script>
+        <script type="text/javascript">
+            $("#@item2.Feature_ID").css("opacity", "1");
+        </script>
+    }
+}
