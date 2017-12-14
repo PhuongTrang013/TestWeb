@@ -10,7 +10,7 @@ namespace PPCRental.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        K21T1_Team3Entities db = new K21T1_Team3Entities();
+        team13Entities db = new team13Entities();
         public ActionResult Login()
         {
             return View();
@@ -59,7 +59,7 @@ namespace PPCRental.Controllers
                         us.Phone = phone;
                         us.Password = password;
                         us.Status = false;
-                        us.Role = "2";
+                        us.Role_ID = 2;
                         db.USERs.Add(us);
                         db.SaveChanges();
                         Session["Fullname"] = us.FullName;
