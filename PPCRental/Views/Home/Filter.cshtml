@@ -15,12 +15,12 @@
         </div>
     </div>
 </div>
-<section class="container resultfilter">
+<section class="resultfilter">
     <div class="section-header text-center">
         <h1 class="heading is-section">Đã tìm thấy <b>@Model.Count()</b> kết quả</h1>
     </div>
-    @*<div class="container Featured-Sales">*@
-        <div class="row row-md4-content-filter">
+    <div class="container Featured-Sales">
+        <div class="row-md4-content">
             @foreach (var item in Model)
             {
                 <div class="col-md-4">
@@ -30,16 +30,13 @@
                             <img class="img-responsive img-last" src="~/Images/@item.Images" alt="">
                         </div>
                         <div class="list-img-banner">Mới</div>
-                        <div class="content-project" style="color: black;">
-                            <h3>@item.PropertyName<br />@item.DISTRICT.DistrictName</h3>
-                            <p>@item.Price @item.UnitPrice<br />@item.PROPERTY_TYPE.Description</p>
+                        <div class="content-project">
+                            <h3 style="color:black">@item.PropertyName<br />@item.DISTRICT.DistrictName</h3>
+                            <p style="color:black">@item.Price @item.UnitPrice<br />@item.PROPERTY_TYPE.Description</p>
                         </div>
                     </a>
                 </div>
             }
         </div>
-    @*</div>*@
+    </div>
 </section>
-
-<div class="parallax-selector"></div>
-

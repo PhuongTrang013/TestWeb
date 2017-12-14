@@ -340,7 +340,7 @@ ul.nav.navbar-nav.navbar-right li:last-child {
     }
 
 .container-fluid.homeheader_bg {
-    background: url(../Images/home4.jpg) center no-repeat #f5f1ed;
+    background: url(../Images/home-bg.jpg) center no-repeat #f5f1ed;
     background-size: cover;
     width: 100%;
 }

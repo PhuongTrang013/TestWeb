@@ -1,11 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <title>@ViewBag.Title - Admin Page</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap1.css" rel="stylesheet" />
@@ -13,7 +11,9 @@
     <link href="~/Content/dataTables.bootstrap4.css" rel="stylesheet" />
     <link href="~/Content/sb-admin.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
-    <link href="~/Content/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+    <link href="~/Content/froala_style.min.css" rel="stylesheet" />
+    <link href="~/Content/froala_editor.pkgd.min.css" rel="stylesheet" />
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
@@ -22,7 +22,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <ul class="navbar-nav navbar-sidenav">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard" style="font-size: 16px;">
                     <a class="nav-link" href="~/Agency/PropertyAgency/IndexAgency">
                         <i class="fa fa-fw fa-dashboard"></i>
@@ -82,25 +82,13 @@
                 </div>
             </div>
         </div>
-        <script src="~/Scripts/jquery.min.js"></script>
-        <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-        <script src="~/Scripts/jquery.easing.min.js"></script>
-        <script src="~/Scripts/dataTables.bootstrap4.js"></script>
-        <script src="~/Scripts/jquery.dataTables.js"></script>
-        <script src="~/Scripts/sb-admin.min.js"></script>
-        <script src="~/Scripts/sb-admin-datatables.min.js"></script>
-        @section Scripts {
-            <script>
-                $('.input-district').select2();
-                $('.input-street').select2();
-                $('.input-street').on('change', function () {
-                    $('.input-street').empty();
-                    $.getJSON('Filter/GetStreet?did=' + $('.input-district').val(), function (json) {
-                        $('.input-street').select2({ data: json });
-                    });
-                });
-            </script>
-        }
     </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.2/js/froala_editor.pkgd.min.js"></script>
+    @*<script>
+        $(function () { $('textarea').froalaEditor() });
+    </script>*@
 </body>
 </html>
