@@ -13,7 +13,7 @@ namespace PPCRental.AcceptanceTests.Driver.User
         {
             using (var controller = new AccountController())
             {
-                _result = controller.Index();
+                _result = controller.Login();
             }
         }
 
