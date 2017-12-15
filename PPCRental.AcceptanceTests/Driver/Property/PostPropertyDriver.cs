@@ -17,6 +17,8 @@ namespace PPCRental.AcceptanceTests.Driver.Property
     class PostPropertyDriver
     {
         private string _sessionName;
+        public PROPERTY _prop = new PROPERTY();
+
         public void insertUserInfomationToDB(Table user)
         {
             var uInfo = TableExtensions.ToDictionary(user);
@@ -50,25 +52,26 @@ namespace PPCRental.AcceptanceTests.Driver.Property
             var propInfo = TableExtensions.ToDictionary(property);
 
             K21T1_Team3Entities db = new K21T1_Team3Entities();
-            PROPERTY prop = new PROPERTY();
-            prop.PropertyName = propInfo["PropertyName"].ToString();
-            prop.PropertyType_ID = int.Parse(propInfo["PropertyType_ID"].ToString());
-            prop.Content = propInfo["Content"].ToString();
-            prop.Street_ID = int.Parse(propInfo["Street_ID"].ToString());
-            prop.Ward_ID = int.Parse(propInfo["Ward_ID"].ToString());
-            prop.District_ID = int.Parse(propInfo["District_ID"].ToString());
-            prop.Price = int.Parse(propInfo["Price"].ToString());
-            prop.UnitPrice = propInfo["UnitPrice"].ToString();
-            prop.Area = propInfo["Area"].ToString();
-            prop.BedRoom = int.Parse(propInfo["BedRoom"].ToString());
-            prop.BathRoom = int.Parse(propInfo["Bathroom"].ToString());
-            prop.PackingPlace = int.Parse(propInfo["PackingPlace"].ToString());
-            prop.UserID = int.Parse(propInfo["UserId"].ToString());
-            prop.Status_ID = int.Parse(propInfo["Status_ID"].ToString());
-
+            _prop.PropertyName = propInfo["PropertyName"].ToString();
+            _prop.PropertyType_ID = int.Parse(propInfo["PropertyType_ID"].ToString());
+            _prop.Content = propInfo["Content"].ToString();
+            _prop.Street_ID = int.Parse(propInfo["Street_ID"].ToString());
+            _prop.Ward_ID = int.Parse(propInfo["Ward_ID"].ToString());
+            _prop.District_ID = int.Parse(propInfo["District_ID"].ToString());
+            _prop.Price = int.Parse(propInfo["Price"].ToString());
+            _prop.UnitPrice = propInfo["UnitPrice"].ToString();
+            _prop.Area = propInfo["Area"].ToString();
+            _prop.BedRoom = int.Parse(propInfo["BedRoom"].ToString());
+            _prop.BathRoom = int.Parse(propInfo["Bathroom"].ToString());
+            _prop.PackingPlace = int.Parse(propInfo["PackingPlace"].ToString());
+            _prop.UserID = int.Parse(propInfo["UserId"].ToString());
+            _prop.Status_ID = int.Parse(propInfo["Status_ID"].ToString());
+        }
+        public void clickSaveButton()
+        {
             using (var item = new PropertyAgencyController())
             {
-                item.Create(prop, null, null, null);
+                item.Create(_prop, null, null, null);
             }
         }
     }

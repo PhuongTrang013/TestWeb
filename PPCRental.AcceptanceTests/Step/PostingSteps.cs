@@ -39,22 +39,16 @@ namespace PPCRental.AcceptanceTests.Step
             _postDriver.inputPropertyInfo(table);
         }
 
-        [When(@"I press ""(.*)"" button")]
-        public void WhenIPressButton(string p0)
+        [When(@"I press Save button")]
+        public void WhenIPressButton()
         {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"The System will check and save information of property")]
-        public void ThenTheSystemWillCheckAndSaveInformationOfProperty()
-        {
-            ScenarioContext.Current.Pending();
+            _postDriver.clickSaveButton();
         }
 
         [Then(@"User should see view Ìndex of Agency")]
         public void ThenUserShouldSeeViewIndexOfAgency()
         {
-            ScenarioContext.Current.Pending();
+            _postDriver.navigateIndexAgency();
         }
 
     }

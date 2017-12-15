@@ -17,6 +17,5 @@ Scenario: Post property successful
 	And User input information of property
 	| PropertyName    | PropertyType_ID | Content            | Street_ID | Ward_ ID | District_ID | Price  | UnitPrice | Area  | BedRoom | BathRoom | PackingPlace | UserID | Status_ID |
 	| VinHome Central | 1               | Khu căn hộ cao cấp | 1         | 1        | 1           | 200000 | USD       | 120m2 | 3       | 3        | 5            | 3      | 1         |
-	When I press "Save" button
-	Then The System will check and save information of property
-	And User should see view Ìndex of Agency
+	When I press Save button
+	Then User should see view Ìndex of Agency
