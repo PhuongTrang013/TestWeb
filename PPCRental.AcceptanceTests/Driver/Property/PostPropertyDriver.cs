@@ -49,7 +49,7 @@ namespace PPCRental.AcceptanceTests.Driver.Property
         {
             var propInfo = TableExtensions.ToDictionary(property);
 
-            team13Entities db = new team13Entities();
+            K21T1_Team3Entities db = new K21T1_Team3Entities();
             PROPERTY prop = new PROPERTY();
             prop.PropertyName = propInfo["PropertyName"].ToString();
             prop.PropertyType_ID = int.Parse(propInfo["PropertyType_ID"].ToString());
