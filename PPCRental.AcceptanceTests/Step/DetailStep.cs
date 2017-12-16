@@ -4,33 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PPCRental.Models;
-using PPCRental.UITests.Selenium.Support;
-using PPCRental.AcceptanceTests.Driver.Property;
 using TechTalk.SpecFlow;
+using PPCRental.AcceptanceTests.Driver.Property;
 
 namespace PPCRental.AcceptanceTests.Step
 {
-    [Binding]
-    public class DetailStep
+    [Binding, Scope(Tag = "automated")]
+    class DetailStep
     {
-        private readonly PropertyDetailsDriver _projectDriver;
+        private readonly PropertyDetailsDriver _propertyDriver;
 
-        [Given(@"the following project")]
-        public void GivenTheFollowingProject(Table givenProperties)
+        public DetailStep(PropertyDetailsDriver driver)
         {
-            _projectDriver.InsertPropertyToDB(givenProperties);
+            _propertyDriver = driver;
+        }
+
+        [Given(@"the following projects")]
+        public void GivenTheFollowingProjects(Table givenProperties)
+        {
+            ScenarioContext.Current.Pending();
         }
 
         [When(@"I open the details of '(.*)'")]
         public void WhenIOpenTheDetailsOf(string property)
         {
-            _projectDriver.OpenProjectDetails(property);
+            ScenarioContext.Current.Pending();
         }
 
         [Then(@"the project details should show")]
         public void ThenTheProjectDetailsShouldShow(Table ShowProperty)
         {
-            _projectDriver.ShowProjectDetails(ShowProperty);
+            ScenarioContext.Current.Pending();
         }
 
     }
