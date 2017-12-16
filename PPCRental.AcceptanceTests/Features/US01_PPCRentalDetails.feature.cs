@@ -106,54 +106,33 @@ namespace PPCRental.AcceptanceTests.Features
                         "TT Tây Đằng",
                         "Ba Vì",
                         "10000"});
-            table1.AddRow(new string[] {
-                        "Saigon Pearl Ruby Block",
-                        "Apartment",
-                        @"– Located on Nguyen Huu Canh Street, this nice apartment has all amenities like swimming pool, sauna, jacuzzi, gym and pet allowed… – It has fully furnished with everything you need like TV, fridge, washing machine, wardrobe, sofa, dining table, kitchenette, … – With $1600/month for 3 bedroom apartment. Inclusive of management fee",
-                        "Thôn Chúc Đồng",
-                        "Đại Yên",
-                        "Chương Mỹ",
-                        "30000"});
 #line 11
- testRunner.Given("the following project", ((string)(null)), table1, "Given ");
+testRunner.Given("the following projects", ((string)(null)), table1, "Given ");
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The author, the PropertyName,the Address and the price of a project can be seen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The author the PropertyName of a project can be seen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "US01_PPCRentalDetails")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("automated")]
-        public virtual void TheAuthorThePropertyNameTheAddressAndThePriceOfAProjectCanBeSeen()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("automated")]
+        public virtual void TheAuthorThePropertyNameOfAProjectCanBeSeen()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The author, the PropertyName,the Address and the price of a project can be seen", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The author the PropertyName of a project can be seen", new string[] {
+                        "automated"});
 #line 17
 this.ScenarioSetup(scenarioInfo);
 #line 10
 this.FeatureBackground();
 #line 18
-    testRunner.When("I open the details of \'PIS Top Apartment\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I open the details of \'PIS Top Apartment\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "PropertyName",
-                        "PropertyType",
-                        "Content",
-                        "Street",
-                        "Ward",
-                        "District",
-                        "Price"});
+                        "PropertyName"});
             table2.AddRow(new string[] {
-                        "PIS Top Apartment",
-                        "Apartment",
-                        "The surrounding neighborhood is very much localized with a great number of local " +
-                            "shops, cafes and restaurants all within minutes walk of the apartment. There is " +
-                            "also a large daily market close by where you can buy groceries, home appliances " +
-                            "and clothing.",
-                        "Điền Viên Thôn",
-                        "TT Tây Đằng",
-                        "Ba Vì",
-                        "10000"});
+                        "PIS Top Apartment"});
 #line 19
- testRunner.Then("the project details should show", ((string)(null)), table2, "Then ");
+testRunner.Then("the project details should show", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
