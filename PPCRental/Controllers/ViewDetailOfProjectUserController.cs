@@ -12,17 +12,9 @@ namespace PPCRental.Controllers
     {
         K21T1_Team3Entities db = new K21T1_Team3Entities();
         // GET: ViewDetailOfProjectUser
-        public ActionResult ViewDetailOfProject(int? id)
+        public ActionResult ViewDetailOfProject(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             var detail = db.PROPERTies.FirstOrDefault(x => x.ID == id);
-            if (detail == null)
-            {
-                return HttpNotFound();
-            }
             return View(detail);
         }
     }
