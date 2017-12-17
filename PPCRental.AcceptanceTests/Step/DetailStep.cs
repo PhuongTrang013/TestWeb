@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PPCRental.Models;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using PPCRental.AcceptanceTests.Driver.Property;
+using System;
 
 namespace PPCRental.AcceptanceTests.Step
 {
-    [Binding, Scope(Tag = "automated")]
-    class DetailStep
+    [Binding, Scope (Tag ="automated")]
+     class ViewDetails
     {
         private readonly PropertyDetailsDriver _propertyDriver;
-
-        public DetailStep(PropertyDetailsDriver driver)
+            
+        public ViewDetails(PropertyDetailsDriver driver)
         {
             _propertyDriver = driver;
         }
@@ -22,19 +17,20 @@ namespace PPCRental.AcceptanceTests.Step
         [Given(@"the following projects")]
         public void GivenTheFollowingProjects(Table givenProperties)
         {
-            ScenarioContext.Current.Pending();
+            _propertyDriver.InsertProjectToDB(givenProperties);
         }
+
 
         [When(@"I open the details of '(.*)'")]
         public void WhenIOpenTheDetailsOf(string property)
         {
-            ScenarioContext.Current.Pending();
+            _propertyDriver.OpenPropertyDetails(property);
         }
 
         [Then(@"the project details should show")]
         public void ThenTheProjectDetailsShouldShow(Table ShowProperty)
         {
-            ScenarioContext.Current.Pending();
+            _propertyDriver.ShowDetailProject(ShowProperty);
         }
 
     }
