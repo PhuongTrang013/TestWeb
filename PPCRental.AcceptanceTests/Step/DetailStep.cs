@@ -5,11 +5,11 @@ using System;
 namespace PPCRental.AcceptanceTests.Step
 {
     [Binding, Scope (Tag ="automated")]
-     class ViewDetails
+     class DetailStep
     {
         private readonly PropertyDetailsDriver _propertyDriver;
             
-        public ViewDetails(PropertyDetailsDriver driver)
+        public DetailStep(PropertyDetailsDriver driver)
         {
             _propertyDriver = driver;
         }
