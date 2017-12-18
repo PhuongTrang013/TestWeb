@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PPCRental.Models.PROPERTY>
 @using PPCRental.Models;
 @{
-    K21T1_Team3Entities db = new K21T1_Team3Entities();
+    team13Entities db = new team13Entities();
     List<PROPERTY_TYPE> prop = new List<PROPERTY_TYPE>();
     prop = db.PROPERTY_TYPE.ToList();
 }
@@ -136,7 +136,7 @@
                             <img src="~/Images/big1.jpg" alt="">
                             <div class="nenmo"></div>
                             <div class="inner-md4-img">
-                                <div class="chuto">@item.CodeType</div>
+                                <div class="chuto">@item.Description</div>
                                 <div class="chunho"></div>
                             </div>
                         </div>
