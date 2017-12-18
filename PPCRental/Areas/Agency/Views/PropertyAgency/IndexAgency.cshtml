@@ -47,7 +47,7 @@
                                @Html.DisplayFor(modelItem => item.STREET.StreetName), @Html.DisplayFor(modelItem => item.WARD.WardName), @Html.DisplayFor(modelItem => item.DISTRICT.DistrictName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.PROPERTY_TYPE.CodeType)
+                                @Html.DisplayFor(modelItem => item.PROPERTY_TYPE.Description)
                             </td>
                             <td>
                                 @Html.ActionLink("Sửa", "Edit", new { id = item.ID }) |
