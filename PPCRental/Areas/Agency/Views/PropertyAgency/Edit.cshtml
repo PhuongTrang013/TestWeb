@@ -273,8 +273,8 @@
                         {
                             <div class="checkbox col-xs-6">
                                 @Html.CheckBox("chkFeature_" + feature.ID,
-                                     db.PROPERTY_FEATURE.Count(pf => pf.Property_ID == Model.ID && pf.Feature_ID == feature.ID) > 0) @feature.FeatureName
-                             </div>
+                                db.PROPERTY_FEATURE.Count(pf => pf.Property_ID == Model.ID && pf.Feature_ID == feature.ID) > 0) @feature.FeatureName
+                            </div>
                         }
                         @*
                             <div class="col-md-4 chk-feature" style="padding-left: 0px; padding-right: 0px;">
@@ -325,7 +325,7 @@
                         <p class="label">Mô tả chi tiết dự án</p>
                     </td>
                     <td>
-                        <textarea rows="7" cols="41" name="content" placeholder="Nhập mô tả chi tiết dự án" style="border-radius: 7px;">@Html.ValueFor(x => x.Content)</textarea>
+                        <textarea rows="7" cols="41" name="content" style="border-radius: 7px;">@Html.ValueFor(x => x.Content)</textarea>
                         @*<input class="input" type="text" name="detail" value="@Html.ValueFor(x => x.Content)" />*@
                     </td>
                 </tr>
