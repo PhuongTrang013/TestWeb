@@ -10,7 +10,7 @@ namespace PPCRental.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        K21T1_Team3Entities db = new K21T1_Team3Entities();
+        team13Entities db = new team13Entities();
         public ActionResult Login()
         {
             return View();
