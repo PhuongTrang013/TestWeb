@@ -10,7 +10,7 @@ namespace PPCRental.Areas.Agency.Controllers
 {
     public class PropertyAgencyController : Controller
     {
-        team13Entities db = new team13Entities();
+        PPCEntities db = new PPCEntities();
         // GET: Admin/ProductAdmin
         public ActionResult IndexAgency()
         {

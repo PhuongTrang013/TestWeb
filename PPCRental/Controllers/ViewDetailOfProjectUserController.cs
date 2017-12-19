@@ -10,7 +10,7 @@ namespace PPCRental.Controllers
 {
     public class ViewDetailOfProjectUserController : Controller
     {
-        team13Entities db = new team13Entities();
+        PPCEntities db = new PPCEntities();
         // GET: ViewDetailOfProjectUser
         public ActionResult ViewDetailOfProject(int id)
         {

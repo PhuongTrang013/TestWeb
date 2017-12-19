@@ -10,7 +10,7 @@ namespace PPCRental.Controllers
 {
     public class HomeController : Controller
     {
-        team13Entities db = new team13Entities();
+        PPCEntities db = new PPCEntities();
         public ActionResult Index()
         {
             var pro = db.PROPERTies.ToList();

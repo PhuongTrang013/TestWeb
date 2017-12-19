@@ -9,7 +9,7 @@ namespace PPCRental.Controllers
 {
     public class ViewListOfProjectController : Controller
     {
-        team13Entities db = new team13Entities();
+        PPCEntities db = new PPCEntities();
         // GET: ViewListOfProjectUser
         public ActionResult ViewListOfProjectUser(int typeid = 1)
         {
