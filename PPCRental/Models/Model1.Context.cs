@@ -13,10 +13,10 @@ namespace PPCRental.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class team13Entities : DbContext
+    public partial class PPCEntities : DbContext
     {
-        public team13Entities()
-            : base("name=team13Entities")
+        public PPCEntities()
+            : base("name=PPCEntities")
         {
         }
     
