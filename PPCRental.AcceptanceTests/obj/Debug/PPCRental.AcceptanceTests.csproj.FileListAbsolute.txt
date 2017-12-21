@@ -256,3 +256,6 @@ D:\3\ComputerScience\PPCRental.AcceptanceTests\bin\Debug\WebDriver.Support.xml
 D:\3\ComputerScience\PPCRental.AcceptanceTests\obj\Debug\PPCRental.AcceptanceTests.csprojResolveAssemblyReference.cache
 D:\3\ComputerScience\PPCRental.AcceptanceTests\obj\Debug\PPCRental.AcceptanceTests.dll
 D:\3\ComputerScience\PPCRental.AcceptanceTests\obj\Debug\PPCRental.AcceptanceTests.pdb
+D:\20.12\ComputerScience\PPCRental.AcceptanceTests\obj\Debug\PPCRental.AcceptanceTests.csprojResolveAssemblyReference.cache
+D:\20.12\ComputerScience\PPCRental.AcceptanceTests\obj\Debug\PPCRental.AcceptanceTests.dll
+D:\20.12\ComputerScience\PPCRental.AcceptanceTests\obj\Debug\PPCRental.AcceptanceTests.pdb
